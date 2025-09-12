@@ -70,7 +70,8 @@
       header{ flex-direction:column; align-items:center; }
       .nav{ justify-content:center; gap:10px; }
       .nav a, .nav .btn{ margin:6px 8px; }
-      .btn.ghost{ align-self:center; } /* garante centralização do "Contato" */
+      .btn.ghost{ align-self:center; }
+      .nav .btn.ghost{ display:none; } /* esconde 'Contato' no menu mobile */
     }
 
     .btn{display:inline-block; padding:12px 18px; border-radius:12px; font-weight:600; background:var(--brand); color:#fff; box-shadow:var(--shadow); transition: transform .15s ease, box-shadow .15s ease;}
