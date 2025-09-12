@@ -12,15 +12,16 @@
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#0f1222" />
+  <!-- Favicon/logo atualizados -->
+  <link rel="icon" href="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true"/>
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Tráfego Pago & Landing Pages que Convertem — Portugal, Brasil & Europa" />
   <meta property="og:description" content="Gestão de mídia orientada a ROI + landing pages de alta conversão. Atuação em Portugal, Brasil e Europa. Drone como adicional." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ypeyoung.github.io/highlevelmkt/" />
-  <meta property="og:image" content="https://github.com/ypeyoung/ypeyoung.github.io/raw/main/logo-hl.png" />
-  <meta property="og:image:width" content="800" />
-  <meta property="og:image:height" content="418" />
+  <meta property="og:image" content="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true" />
   <meta property="og:locale" content="pt_PT" />
   <meta property="og:locale:alternate" content="pt_BR" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -29,52 +30,49 @@
   <link rel="preconnect" href="https://www.instagram.com" crossorigin>
   <link rel="preconnect" href="https://static.cdninstagram.com" crossorigin>
 
-  <!-- Security: CSP (allow Instagram iframes and wa.me links; allow inline script for slider) -->
+  <!-- Security: CSP -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     img-src 'self' https: data:;
     style-src 'self' 'unsafe-inline';
     script-src 'self' 'unsafe-inline';
     frame-src https://www.instagram.com https://static.cdninstagram.com;
-    connect-src 'self' https://www.instagram.com;
+    connect-src 'self';
     media-src 'self' https:;
     object-src 'none';
     base-uri 'self';
-    form-action 'self' https://wa.me;
+    form-action 'self' https://wa.me mailto:;
     upgrade-insecure-requests;
   ">
 
   <style>
     :root{
-      --bg:#0f1222;
-      --card:#161a2e;
-      --muted:#9aa4bf;
-      --text:#f2f4ff;
-      --brand:#7c5cff; /* roxo */
-      --accent:#ffd166; /* âmbar */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --maxw: 1150px;
+      --bg:#0f1222; --card:#161a2e; --muted:#9aa4bf; --text:#f2f4ff;
+      --brand:#7c5cff; --accent:#ffd166; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px; --radius-sm:12px; --maxw:1150px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 70% -10%, rgba(124,92,255,.22), transparent 60%),
-      radial-gradient(900px 450px at 10% 0%, rgba(255,209,102,.12), transparent 50%), var(--bg); color:var(--text);
-      font-family: system-ui,-apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 70% -10%, rgba(124,92,255,.22), transparent 60%), radial-gradient(900px 450px at 10% 0%, rgba(255,209,102,.12), transparent 50%), var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
     a{color:var(--accent); text-decoration:none}
-    /* smooth scroll */
-    html { scroll-behavior: smooth; }
+    html{scroll-behavior:smooth}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px}
+
+    /* HEADER (revertido ao estilo simples) */
     header{display:flex; align-items:center; justify-content:space-between; gap:18px}
-    .logo-img { height: 36px; width:auto; display:block; border-radius:10px }
-    @media (max-width: 900px){ .logo-img { height: 30px; } }
-    .nav a{margin:0 10px; color:var(--muted)}
-    .btn{display:inline-block; padding:12px 18px; border-radius:12px; font-weight:600; background:var(--brand); color:white; box-shadow:var(--shadow)}
+    .logo-img{height:36px; width:auto; display:block; border-radius:10px}
+    @media (max-width:640px){ header .logo-img{ display:none; } } /* mantém pedido p/ esconder logo no mobile */
+    @media (max-width:900px){ .logo-img{height:30px} }
+    .nav a{margin:0 10px; color:var(--muted)} /* sem underline animado */
+
+    .btn{display:inline-block; padding:12px 18px; border-radius:12px; font-weight:600; background:var(--brand); color:#fff; box-shadow:var(--shadow); transition: transform .15s ease, box-shadow .15s ease;}
     .btn.alt{background:var(--accent); color:#121212}
     .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.16); color:var(--text)}
+    .btn:hover, .btn:focus-visible{ transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,0,0,.45); }
+
     /* hero */
     .hero{padding:64px 0 36px; display:grid; grid-template-columns:1.2fr .8fr; gap:30px; align-items:center}
-    .h-badge{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; background:rgba(124,92,255,.14); border:1px solid rgba(124,92,255,.25); color:#d8d3ff; font-weight:600; font-size:.9rem}
+    .h-badge{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; background:rgba(124,92,255,.14); border:1px solid rgba(124,92,255,.25); color:#d8d3ff; font-weight:600; font-size:.9rem; box-shadow:0 0 0 rgba(124,92,255,0); transition: box-shadow .25s ease;}
+    .h-badge:hover{ box-shadow: 0 0 28px rgba(124,92,255,.28); }
     .hero h1{font-size:clamp(28px, 5vw, 52px); line-height:1.1; margin:14px 0 10px}
     .hero p{font-size:1.05rem; color:var(--muted); margin:8px 0 20px}
     .hero .cta{display:flex; gap:12px; flex-wrap:wrap}
@@ -82,6 +80,7 @@
     .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px}
     .kpi{background:var(--card); padding:16px; border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,.06)}
     .kpi b{font-size:1.25rem}
+
     /* sections */
     section{padding:52px 0}
     h2{font-size:clamp(22px,4vw,34px); margin:0 0 16px}
@@ -90,6 +89,7 @@
     .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
     .list{margin:0; padding-left:18px; color:var(--muted)}
     .list li{margin:8px 0}
+
     /* pricing */
     .pricing{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; align-items:stretch}
     .price-card{background:linear-gradient(180deg, rgba(124,92,255,.13), transparent), var(--card); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:22px; display:flex; flex-direction:column}
@@ -97,43 +97,47 @@
     .price{font-size:2rem; font-weight:800; margin:12px 0}
     .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.08); font-weight:700; font-size:.85rem; letter-spacing:.3px}
     .grow{flex:1 1 auto}
+
     /* testimonials */
     .testimonials{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
     .tcard{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
     .stars{color:#ffd166; font-size:14px; letter-spacing:1px; margin-bottom:8px}
     blockquote{margin:0; padding:0; color:#dfe3ff; font-style:italic}
     cite{display:block; margin-top:10px; color:var(--muted); font-style:normal}
-    /* Portfolio slider */
+
+    /* mobile-only portfolio reel slider */
+    #portfolio-mobile{display:block}
+    @media (min-width:641px){#portfolio-mobile{display:none}} /* esconde no desktop */
     .slider{position:relative; overflow:hidden; border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.08)}
     .slides{display:flex; transition:transform .45s ease; will-change:transform}
-    .slide{min-width:100%; position:relative; padding-top:56.25%; background:#0c0f1c}
-    .slide iframe, .slide video{position:absolute; inset:0; width:100%; height:100%; border:0}
-    .slider .navbtn{position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.25); color:#fff; padding:10px 14px; border-radius:12px; cursor:pointer}
-    .slider .prev{left:10px}
-    .slider .next{right:10px}
+    .reel{min-width:100%; position:relative; padding-top:177.78%; background:#0c0f1c} /* 9:16 */
+    .reel iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .navbtn{position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.25); color:#fff; padding:10px 14px; border-radius:12px; cursor:pointer}
+    .prev{left:10px} .next{right:10px}
     .dots{display:flex; gap:6px; justify-content:center; margin-top:10px}
     .dot{width:10px; height:10px; border-radius:999px; background:rgba(255,255,255,.25); border:0}
     .dot.active{background:var(--accent)}
+
     /* footer */
     footer{padding:26px 0 40px; color:var(--muted)}
     .foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
     /* responsive */
-    @media (max-width: 1100px){
+    @media (max-width:1100px){
       .hero{grid-template-columns:1fr; padding-top:38px}
       .two{grid-template-columns:1fr}
       .three{grid-template-columns:1fr}
       .pricing{grid-template-columns:1fr; gap:16px}
       .testimonials{grid-template-columns:repeat(2,1fr)}
     }
-    @media (max-width: 640px){
-      .testimonials{grid-template-columns:1fr}
-    }
+    @media (max-width:640px){.testimonials{grid-template-columns:1fr}}
+
     /* playful micro-animation */
-    @keyframes floaty { from{ transform:translateY(0)} 50%{ transform:translateY(-6px)} to{ transform:translateY(0)} }
-    .floaty{ animation: floaty 6s ease-in-out infinite }
+    @keyframes floaty {from{transform:translateY(0)} 50%{transform:translateY(-6px)} to{transform:translateY(0)}}
+    .floaty{animation:floaty 6s ease-in-out infinite}
   </style>
 
-  <!-- JSON-LD: Organization + Service + FAQ with areas served -->
+  <!-- JSON-LD with expanded areas served -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -143,7 +147,7 @@
         "@id": "https://ypeyoung.github.io/highlevelmkt/#org",
         "name": "HighLevel MKT",
         "url": "https://ypeyoung.github.io/highlevelmkt/",
-        "logo": "https://github.com/ypeyoung/ypeyoung.github.io/raw/main/logo-hl.png",
+        "logo": "https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true",
         "email": "contato@highlevelmkt.com",
         "telephone": "+351934071660",
         "areaServed": [
@@ -152,12 +156,47 @@
           {"@type":"Place","name":"Estoril"},
           {"@type":"Place","name":"Oeiras"},
           {"@type":"Place","name":"São Domingos de Rana"},
+          {"@type":"Place","name":"Carcavelos"},
+          {"@type":"Place","name":"Parede"},
+          {"@type":"Place","name":"Sintra"},
+          {"@type":"Place","name":"Amadora"},
+          {"@type":"Place","name":"Odivelas"},
+          {"@type":"Place","name":"Loures"},
+          {"@type":"Place","name":"Almada"},
+          {"@type":"Place","name":"Seixal"},
+          {"@type":"Place","name":"Setúbal"},
+          {"@type":"Place","name":"Vila Franca de Xira"},
+          {"@type":"Place","name":"Paço de Arcos"},
+          {"@type":"Place","name":"Algés"},
+          {"@type":"Place","name":"Linda-a-Velha"},
+          {"@type":"Place","name":"Carnaxide"},
+          {"@type":"Place","name":"Madrid"},
+          {"@type":"Place","name":"Getafe"},
+          {"@type":"Place","name":"Alcalá de Henares"},
+          {"@type":"Place","name":"Leganés"},
+          {"@type":"Place","name":"Móstoles"},
+          {"@type":"Place","name":"Fuenlabrada"},
+          {"@type":"Place","name":"Alcorcón"},
+          {"@type":"Place","name":"Torrejón de Ardoz"},
+          {"@type":"Place","name":"Barcelona"},
+          {"@type":"Place","name":"Badalona"},
+          {"@type":"Place","name":"L'Hospitalet de Llobregat"},
+          {"@type":"Place","name":"Sabadell"},
+          {"@type":"Place","name":"Terrassa"},
+          {"@type":"Place","name":"Sant Cugat del Vallès"},
           {"@type":"Place","name":"Iguaba Grande"},
           {"@type":"Place","name":"Cabo Frio"},
           {"@type":"Place","name":"Araruama"},
           {"@type":"Place","name":"São Pedro da Aldeia"},
-          {"@type":"Place","name":"Madrid"},
-          {"@type":"Place","name":"Barcelona"},
+          {"@type":"Place","name":"Armação dos Búzios"},
+          {"@type":"Place","name":"Arraial do Cabo"},
+          {"@type":"Place","name":"Saquarema"},
+          {"@type":"Place","name":"Rio das Ostras"},
+          {"@type":"Place","name":"Macaé"},
+          {"@type":"Place","name":"Maricá"},
+          {"@type":"Place","name":"Praia Seca"},
+          {"@type":"Place","name":"Tamoios"},
+          {"@type":"Place","name":"Barra de São João"},
           {"@type":"Country","name":"Portugal"},
           {"@type":"Country","name":"Brasil"},
           {"@type":"Country","name":"Espanha"},
@@ -168,35 +207,13 @@
         "@type": "WebSite",
         "@id": "https://ypeyoung.github.io/highlevelmkt/#website",
         "url": "https://ypeyoung.github.io/highlevelmkt/",
-        "name": "HighLevel MKT",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://ypeyoung.github.io/highlevelmkt/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "name": "HighLevel MKT"
       },
       {
         "@type": "Service",
         "serviceType": "Gestão de Tráfego Pago e Landing Pages de Conversão",
         "provider": {"@id":"https://ypeyoung.github.io/highlevelmkt/#org"},
-        "areaServed": ["Portugal","Brasil","Europa","Lisboa","Cascais","Estoril","São Domingos de Rana","Iguaba Grande","Cabo Frio","Araruama","São Pedro da Aldeia","Madrid","Barcelona"],
-        "hasOfferCatalog": {
-          "@type":"OfferCatalog",
-          "name":"Planos",
-          "itemListElement":[
-            {"@type":"Offer","name":"Essencial","priceCurrency":"EUR","price":"350"},
-            {"@type":"Offer","name":"Pro","priceCurrency":"EUR","price":"750"},
-            {"@type":"Offer","name":"Premium","priceCurrency":"EUR","price":"1200"}
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type":"Question","name":"Vocês atendem Portugal, Brasil e outras cidades da Europa?","acceptedAnswer":{"@type":"Answer","text":"Sim. Atuamos de forma remota e presencial em Portugal (Lisboa, Cascais, Estoril, Oeiras, São Domingos de Rana), no Brasil (Região dos Lagos: Iguaba Grande, Cabo Frio, Araruama, São Pedro da Aldeia) e demais cidades na Europa."}},
-          {"@type":"Question","name":"O drone é obrigatório nos serviços?","acceptedAnswer":{"@type":"Answer","text":"Não. O drone é um adicional para criativos e filmagens quando faz sentido para a estratégia."}},
-          {"@type":"Question","name":"Qual o investimento mínimo?","acceptedAnswer":{"@type":"Answer","text":"O plano Essencial começa em €350 (mídia à parte)."}}
-        ]
+        "areaServed": ["Portugal","Brasil","Espanha","Europa","Lisboa","Cascais","Estoril","Oeiras","São Domingos de Rana","Carcavelos","Parede","Sintra","Amadora","Odivelas","Loures","Almada","Seixal","Setúbal","Vila Franca de Xira","Paço de Arcos","Algés","Linda-a-Velha","Carnaxide","Madrid","Getafe","Alcalá de Henares","Leganés","Móstoles","Fuenlabrada","Alcorcón","Torrejón de Ardoz","Barcelona","Badalona","L'Hospitalet de Llobregat","Sabadell","Terrassa","Sant Cugat del Vallès","Iguaba Grande","Cabo Frio","Araruama","São Pedro da Aldeia","Armação dos Búzios","Arraial do Cabo","Saquarema","Rio das Ostras","Macaé","Maricá","Praia Seca","Tamoios","Barra de São João"]
       }
     ]
   }
@@ -205,15 +222,13 @@
 <body>
   <div class="wrap">
     <header>
-      <!-- LOGO (sem nome) -->
       <a href="#topo" class="logo" aria-label="Página inicial">
-        <img class="logo-img" src="https://github.com/ypeyoung/ypeyoung.github.io/blob/main/logo-hl.png?raw=true" alt="HighLevel MKT — Agência de tráfego pago e landing pages" decoding="async" fetchpriority="high" />
+        <img class="logo-img" src="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true" alt="HighLevel MKT" decoding="async" fetchpriority="high" />
       </a>
       <nav class="nav">
         <a href="#servicos">Serviços</a>
         <a href="#planos">Planos</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#areas">Áreas</a>
+        <a href="portfolio.html">Portfólio</a>
         <a href="#cases">Depoimentos</a>
         <a href="#contato" class="btn ghost">Contato</a>
       </nav>
@@ -225,7 +240,6 @@
         <h1>Mais leads, menos desperdício: <em>cresça com tráfego pago</em> e landing pages de alta conversão.</h1>
         <p>Gestão de mídia <strong>orientada a ROI</strong> + páginas otimizadas para conversão. <u>Filmagem com drone</u> como adicional para criativos de alto impacto.</p>
         <div class="cta">
-          <!-- WhatsApp atualizado -->
           <a class="btn" href="https://wa.me/351934071660?text=Quero%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer">Agendar diagnóstico gratuito</a>
           <a class="btn alt" href="#planos">Ver planos</a>
           <a class="btn ghost" href="#cases">Ver depoimentos</a>
@@ -244,7 +258,6 @@
           <li>Implementação (pixel/GA4/UTM)</li>
           <li>Otimizações semanais e relatórios</li>
         </ol>
-        <div class="space"></div>
         <small style="color:var(--muted)">* Drone como adicional para criativos/vídeos.</small>
       </div>
     </section>
@@ -273,10 +286,10 @@
         <div class="card">
           <h3>SEO & Tech — o que entregamos</h3>
           <ul class="list">
-            <li><strong>Titles & Meta Description</strong> + <strong>Open Graph</strong> (pré-visualização correta ao compartilhar).</li>
+            <li><strong>Titles & Meta Description</strong> + <strong>Open Graph</strong>.</li>
             <li><strong>Schema.org</strong> (Organization/Service/FAQ) para SEO local e regional.</li>
             <li><strong>Assets otimizados</strong> (WebP), carregamento rápido e <strong>responsividade</strong>.</li>
-            <li><strong>Pronto para deploy</strong> no GitHub Pages (com <code>basePath</code> se necessário) ou Vercel.</li>
+            <li><strong>Pronto para deploy</strong> no GitHub Pages ou Vercel.</li>
           </ul>
         </div>
       </div>
@@ -299,7 +312,7 @@
         </div>
         <div class="price-card best">
           <span class="pill">Pro</span>
-          <div class="price">€750–€900</div>
+          <div class="price">€650–€800</div>
           <ul class="list">
             <li>Google + Meta</li>
             <li>LP avançada + A/B simples</li>
@@ -311,7 +324,7 @@
         </div>
         <div class="price-card">
           <span class="pill">Premium</span>
-          <div class="price">€1200+</div>
+          <div class="price">€1100+</div>
           <ul class="list">
             <li>Estratégia multicanais</li>
             <li>LP premium (seções dinâmicas + prova social)</li>
@@ -326,87 +339,54 @@
       <small style="color:var(--muted)">*Valores não incluem verba de mídia. Escopo pode variar conforme necessidade.</small>
     </section>
 
-    <!-- PORTFÓLIO (SLIDER) -->
-    <section id="portfolio">
-      <h2>Portfólio</h2>
-      <div class="slider" aria-roledescription="carousel">
-        <div class="slides" id="slides">
-          <!-- Instagram embeds via /embed -->
-          <div class="slide"><iframe loading="lazy" title="Instagram 1" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/p/DN76RNPjpz9/embed"></iframe></div>
-          <div class="slide"><iframe loading="lazy" title="Instagram 2" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DKANrZOPSbC/embed"></iframe></div>
-          <div class="slide"><iframe loading="lazy" title="Instagram 3" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/p/DKHiZI5IEE2/embed"></iframe></div>
-          <div class="slide"><iframe loading="lazy" title="Instagram 4" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DHHGHUUS7lW/embed"></iframe></div>
-          <div class="slide"><iframe loading="lazy" title="Instagram 5" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DJHGLPwR3bW/embed"></iframe></div>
-          <div class="slide"><iframe loading="lazy" title="Instagram 6" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DA5152KOMma/embed"></iframe></div>
-          <div class="slide"><iframe loading="lazy" title="Instagram 7" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DIQ52ldx6AY/embed"></iframe></div>
-        </div>
-        <button class="navbtn prev" aria-label="Anterior" id="prevBtn" tabindex="0">‹</button>
-        <button class="navbtn next" aria-label="Próximo" id="nextBtn" tabindex="0">›</button>
+    <!-- TESTEMUNHOS -->
+    <section id="cases">
+      <h2>O que dizem nossos clientes</h2>
+      <p style="color:var(--muted); margin-top:-6px">Depoimentos coletados dos nossos projetos.</p>
+      <div class="testimonials">
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Os vídeos dos imóveis e os anúncios segmentados duplicaram as visitas em 30 dias. Fechámos 3 vendas no primeiro mês.”</blockquote><cite>— Lúcia Canelas · Proprietária — Imobiliária Canelas</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Depois da filmagem + tráfego pago, as reservas de mesas aumentaram de forma constante. O salão passou a lotar nos fins-de-semana.”</blockquote><cite>— Stefan · Proprietário — Latina Grill</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Os criativos com drone deixaram a clínica moderna. Saímos de 8 para 22 procedimentos/semana em 6 semanas.”</blockquote><cite>— Arthur · Gestor — Mais Laser Cabo Frio</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Os vídeos das coleções e as campanhas trouxeram mais visitas e compras — ficamos com lançamentos esgotados.”</blockquote><cite>— Fábio · Diretor — TX Multimarcas (moda)</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Com captação profissional e anúncios, dobramos as consultas particulares. A marca ficou mais premium.”</blockquote><cite>— Dr. Wellisson · Dermatologista</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“A estratégia trouxe inscrições com CPL competitivo e lotamos duas turmas extras no trimestre.”</blockquote><cite>— Gutemberg · CEO — Educar Treinamentos</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Os vídeos de casos e a segmentação local multiplicaram os agendamentos. Crescemos forte em banho &amp; tosa.”</blockquote><cite>— Dr. Anderson · Clínica Veterinária Palmeiras</cite></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>“Organizamos a comunicação e o tráfego; os cursos ganharam credibilidade e tivemos turmas completas.”</blockquote><cite>— Genaria · Fundadora — Instituto Genaria Viana</cite></div>
       </div>
-      <div class="dots" id="dots" aria-hidden="true"></div>
     </section>
 
-    <!-- ÁREAS ATENDIDAS (SEO local) -->
+    <!-- ONDE ATUAMOS (abaixo dos depoimentos) -->
     <section id="areas">
       <h2>Onde atuamos</h2>
       <div class="two">
         <div class="card">
           <h3>Portugal & Espanha</h3>
-          <p class="list">Lisboa, Cascais, Estoril, Oeiras, São Domingos de Rana, Madrid, Barcelona e outras cidades da Europa.</p>
+          <p class="list">Lisboa, Cascais, Estoril, Oeiras, São Domingos de Rana, <strong>Carcavelos</strong>, <strong>Parede</strong>, <strong>Sintra</strong>, Amadora, Odivelas, Loures, Almada, Seixal, Setúbal, Vila Franca de Xira, <strong>Paço de Arcos</strong>, <strong>Algés</strong>, <strong>Linda‑a‑Velha</strong>, <strong>Carnaxide</strong>, Madrid, Getafe, Alcalá de Henares, Leganés, Móstoles, Fuenlabrada, Alcorcón, Torrejón de Ardoz, Barcelona, Badalona, L'Hospitalet de Llobregat, Sabadell, Terrassa, Sant Cugat del Vallès.</p>
         </div>
         <div class="card">
           <h3>Brasil — Região dos Lagos (RJ)</h3>
-          <p class="list">Iguaba Grande, Cabo Frio, Araruama, São Pedro da Aldeia e arredores.</p>
+          <p class="list">Iguaba Grande, Cabo Frio, Araruama, São Pedro da Aldeia, <strong>Armação dos Búzios</strong>, <strong>Arraial do Cabo</strong>, <strong>Saquarema</strong>, Rio das Ostras, Macaé, Maricá, <strong>Praia Seca</strong> (Araruama), <strong>Tamoios/Unamar</strong> (Cabo Frio), <strong>Barra de São João</strong> (Casimiro de Abreu).</p>
         </div>
       </div>
     </section>
 
-    <!-- TESTEMUNHOS 2x4 -->
-    <section id="cases">
-      <h2>O que dizem nossos clientes</h2>
-      <p style="color:var(--muted); margin-top:-6px">Depoimentos coletados dos nossos projetos.</p>
-      <div class="testimonials">
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Os vídeos dos imóveis e os anúncios segmentados duplicaram as visitas em 30 dias. Fechámos 3 vendas no primeiro mês.”</blockquote>
-          <cite>— Lúcia Canelas · Proprietária — Imobiliária Canelas</cite>
+    <!-- PORTFÓLIO MOBILE-ONLY (9:16) -->
+    <section id="portfolio-mobile">
+      <h2>Portfólio</h2>
+      <div class="slider" aria-roledescription="carousel">
+        <div class="slides" id="slides">
+          <div class="reel"><iframe loading="lazy" title="IG 1" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/p/DN76RNPjpz9/embed"></iframe></div>
+          <div class="reel"><iframe loading="lazy" title="IG 2" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DKANrZOPSbC/embed"></iframe></div>
+          <div class="reel"><iframe loading="lazy" title="IG 3" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/p/DKHiZI5IEE2/embed"></iframe></div>
+          <div class="reel"><iframe loading="lazy" title="IG 4" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DHHGHUUS7lW/embed"></iframe></div>
+          <div class="reel"><iframe loading="lazy" title="IG 5" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DJHGLPwR3bW/embed"></iframe></div>
+          <div class="reel"><iframe loading="lazy" title="IG 6" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DA5152KOMma/embed"></iframe></div>
+          <div class="reel"><iframe loading="lazy" title="IG 7" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="origin-when-cross-origin" src="https://www.instagram.com/reel/DIQ52ldx6AY/embed"></iframe></div>
         </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Depois da filmagem + tráfego pago, as reservas de mesas aumentaram de forma constante. O salão passou a lotar nos fins-de-semana.”</blockquote>
-          <cite>— Stefan · Proprietário — Latina Grill</cite>
-        </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Os criativos com drone deixaram a clínica moderna. Saímos de 8 para 22 procedimentos/semana em 6 semanas.”</blockquote>
-          <cite>— Arthur · Gestor — Mais Laser Cabo Frio</cite>
-        </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Os vídeos das coleções e as campanhas trouxeram mais visitas e compras — ficamos com lançamentos esgotados.”</blockquote>
-          <cite>— Fábio · Diretor — TX Multimarcas (moda)</cite>
-        </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Com captação profissional e anúncios, dobramos as consultas particulares. A marca ficou mais premium.”</blockquote>
-          <cite>— Dr. Wellisson · Dermatologista</cite>
-        </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“A estratégia trouxe inscrições com CPL competitivo e lotamos duas turmas extras no trimestre.”</blockquote>
-          <cite>— Gutemberg · CEO — Educar Treinamentos</cite>
-        </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Os vídeos de casos e a segmentação local multiplicaram os agendamentos. Crescemos forte em banho &amp; tosa.”</blockquote>
-          <cite>— Dr. Anderson · Clínica Veterinária Palmeiras</cite>
-        </div>
-        <div class="tcard">
-          <div class="stars">★★★★★</div>
-          <blockquote>“Organizamos a comunicação e o tráfego; os cursos ganharam credibilidade e tivemos turmas completas.”</blockquote>
-          <cite>— Genaria · Fundadora — Instituto Genaria Viana</cite>
-        </div>
+        <button class="navbtn prev" aria-label="Anterior" id="prevBtn">‹</button>
+        <button class="navbtn next" aria-label="Próximo" id="nextBtn">›</button>
       </div>
+      <div class="dots" id="dots"></div>
     </section>
 
     <section id="contato">
@@ -415,10 +395,7 @@
         <div class="card">
           <h3>Vamos começar?</h3>
           <p class="muted">Agende um diagnóstico gratuito ou peça uma proposta.</p>
-          <p>
-            WhatsApp: <a href="https://wa.me/351934071660" target="_blank" rel="noopener noreferrer">+351 934 071 660</a><br/>
-            E-mail: <a href="mailto:contato@highlevelmkt.com">contato@highlevelmkt.com</a>
-          </p>
+          <p>WhatsApp: <a href="https://wa.me/351934071660" target="_blank" rel="noopener noreferrer">+351 934 071 660</a><br/>E-mail: <a href="mailto:contato@highlevelmkt.com">contato@highlevelmkt.com</a></p>
           <a class="btn" href="https://wa.me/351934071660?text=Quero%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer">Agendar agora</a>
         </div>
         <div class="card">
@@ -441,12 +418,30 @@
   </div>
 
   <script>
-    // Year
+    // Ano
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Simple slider logic
+    // Scroll-reveal (mantido leve e respeitando prefers-reduced-motion)
+    (function(){
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const els = document.querySelectorAll('section, .card, .tcard');
+      els.forEach(el => { el.style.opacity=0; el.style.transform='translateY(12px)'; });
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.style.transition='opacity .35s ease, transform .35s ease';
+            e.target.style.opacity=1; e.target.style.transform='translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:.12});
+      els.forEach(el=>io.observe(el));
+    })();
+
+    // Slider (mobile)
     (function(){
       const slides = document.getElementById('slides');
+      if(!slides) return;
       const prev = document.getElementById('prevBtn');
       const next = document.getElementById('nextBtn');
       const dotsC = document.getElementById('dots');
@@ -454,7 +449,7 @@
       let index = 0, startX = 0, currentX = 0, isDown = false;
 
       function update(){
-        slides.style.transform = `translateX(-${index * 100}%)`;
+        slides.style.transform = 'translateX(' + (-index*100) + '%)';
         dotsC.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active', i===index));
       }
       function mkdot(i){
@@ -465,31 +460,21 @@
         return b;
       }
       for(let i=0;i<total;i++) dotsC.appendChild(mkdot(i));
-
       prev.addEventListener('click', ()=>{ index = (index-1+total)%total; update(); });
       next.addEventListener('click', ()=>{ index = (index+1)%total; update(); });
-      document.addEventListener('keydown', e=>{
-        if(e.key==='ArrowLeft') prev.click();
-        if(e.key==='ArrowRight') next.click();
-      });
-
-      // touch drag
       slides.addEventListener('pointerdown', e=>{ isDown=true; startX=e.clientX; slides.style.transition='none'; });
       window.addEventListener('pointerup', ()=>{
         if(!isDown) return;
         isDown=false; slides.style.transition='transform .45s ease';
         const dx = currentX - startX;
-        if(Math.abs(dx) > 50){
-          if(dx<0) next.click(); else prev.click();
-        } else update();
+        if(Math.abs(dx) > 50){ if(dx<0) next.click(); else prev.click(); } else update();
       });
       window.addEventListener('pointermove', e=>{
         if(!isDown) return;
         currentX = e.clientX;
         const dx = currentX - startX;
-        slides.style.transform = `translateX(calc(-${index*100}% + ${dx}px))`;
+        slides.style.transform = 'translateX(calc(' + (-index*100) + '% + ' + dx + 'px))';
       });
-
       update();
     })();
   </script>
