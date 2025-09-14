@@ -33,9 +33,9 @@
     default-src 'self';
     img-src 'self' https: data:;
     style-src 'self' 'unsafe-inline';
-    script-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline' https://connect.facebook.net;
     frame-src https://www.instagram.com https://static.cdninstagram.com;
-    connect-src 'self';
+    connect-src 'self' https://connect.facebook.net https://www.facebook.com https://graph.facebook.com;
     media-src 'self' https:;
     object-src 'none';
     base-uri 'self';
@@ -587,5 +587,26 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
     var href='mailto:'+emailTo+'?subject='+subject+'&body='+body; var a=document.createElement('a'); a.href=href; a.style.display='none'; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); },100);
     var ok=document.getElementById('lf-success'); if(ok){ ok.style.display='block'; } f.reset(); if(range) setBubble();
   });
-})();</script></body>
+})();</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+try{
+fbq('init', '4331967567089383');
+fbq('track', 'PageView');
+}catch(e){}
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4331967567089383&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</body>
 </html>
