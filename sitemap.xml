@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.highlevelmkt.com/</loc>
     <lastmod>2025-09-14</lastmod>
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/"/>
   </url>
   <url>
     <loc>https://www.highlevelmkt.com/br/</loc>
     <lastmod>2025-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/br/"/>
   </url>
   <url>
     <loc>https://www.highlevelmkt.com/cases/</loc>
     <lastmod>2025-09-14</lastmod>
     <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/cases/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/cases/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/cases/"/>
   </url>
   <url>
     <loc>https://www.highlevelmkt.com/br/cases/</loc>
     <lastmod>2025-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/cases/"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/cases/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/cases/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/br/cases/"/>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/agencia-marketing-cascais/</loc>
+    <lastmod>2025-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/agencia-marketing-cascais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/agencia-marketing-cascais/"/>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/trafego-pago-cascais/</loc>
+    <lastmod>2025-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/trafego-pago-cascais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/trafego-pago-cascais/"/>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/videos-de-drone-cascais/</loc>
+    <lastmod>2025-09-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/videos-de-drone-cascais/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/videos-de-drone-cascais/"/>
   </url>
 </urlset>
