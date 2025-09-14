@@ -30,14 +30,35 @@
   <link rel="preconnect" href="https://www.instagram.com" crossorigin>
   <link rel="preconnect" href="https://static.cdninstagram.com" crossorigin>
 
-  <!-- Security: CSP -->
-  <meta http-equiv="Content-Security-Policy" content="
+  
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin><!-- Security: CSP -->
+  
+  <!-- Google tag (gtag.js) + Consent Mode v2 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQCBN4SH2K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Consent defaults (denied) until the user chooses
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'security_storage': 'granted',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-YQCBN4SH2K');
+  </script>
+
+<meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     img-src 'self' https: data:;
     style-src 'self' 'unsafe-inline';
-    script-src 'self' 'unsafe-inline';
+    script-src https://www.googletagmanager.com 'self' 'unsafe-inline';
     frame-src https://www.instagram.com https://static.cdninstagram.com;
-    connect-src 'self';
+    \1 https://www.google-analytics.com;
     media-src 'self' https:;
     object-src 'none';
     base-uri 'self';
@@ -245,6 +266,18 @@
     ]
   }
   </script>
+
+  <style>
+    .consent-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#111;color:#eee;border-top:1px solid #333;box-shadow:0 -8px 30px rgba(0,0,0,.25)}
+    .consent-wrap{max-width:1120px;margin:0 auto;padding:14px 16px;display:flex;gap:16px;align-items:flex-start}
+    .consent-text{flex:1;font-size:.95rem;line-height:1.4}
+    .consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .consent-actions .btn{padding:10px 14px;border-radius:10px;border:1px solid #444;background:#1f1f1f;color:#fff;cursor:pointer}
+    .consent-actions .btn.primary{background:#6F4CF3;border-color:#6F4CF3}
+    .consent-actions .btn.link{background:transparent;border-color:transparent;text-decoration:underline;color:#bbb}
+    @media (max-width:720px){.consent-wrap{flex-direction:column}.consent-actions{width:100%}.consent-actions .btn{flex:1}}
+  </style>
+
 </head>
 <body>
   <div class="wrap">
@@ -439,7 +472,7 @@
     <footer class="reveal">
       <div class="foot">
         <small>© <span id="year"></span> HighLevel MKT. Todos os direitos reservados.</small>
-        <div><a href="#">Política de Privacidade</a> • <a href="#">Termos</a></div>
+        <div><a href="/politica-de-privacidade.html">Política de Privacidade</a> • <a href="/termos-e-condicoes.html">Termos e Condições</a></div>
       </div>
     </footer>
   </div>
@@ -528,5 +561,308 @@
       update();
     })();
   </script>
+
+<script>
+(function() {
+  // Run after load to ensure DOM is ready
+  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
+  function $all(sel, ctx){ return Array.from((ctx||document).querySelectorAll(sel)); }
+
+  // URL override (?hl=br|pt|en)
+  var params = new URLSearchParams(location.search);
+  var hl = (params.get('hl')||'').toLowerCase();
+  if(hl==='br'){ setTimeout(function(){ setBR(); },0); return; }
+  if(hl==='pt'){ /* keep default PT-PT */ }
+  if(hl==='en'){ setTimeout(function(){ setEN(); },0); return; }
+
+  function setBR() {
+    try {
+      // Language
+      document.documentElement.lang = 'pt-BR';
+      // Pricing
+      $all('.price-card').forEach(function(card){
+        var label = (card.querySelector('.pill')||{}).textContent||'';
+        var priceEl = card.querySelector('.price');
+        if(!priceEl) return;
+        var t = label.trim().toLowerCase();
+        if(t === 'essencial'){ priceEl.textContent = 'R$ 650'; }
+        else if(t === 'pro'){ priceEl.textContent = 'R$ 950'; }
+        else if(t === 'premium'){ priceEl.textContent = 'a consultar'; }
+      });
+      // Minor BR copy tweaks if needed (kept PT largely compatible)
+    } catch(e){ console.warn('BR localization error', e); }
+  }
+
+  function setEN() {
+    try {
+      document.documentElement.lang = 'en';
+      // Headings
+      var hTop = $('.hero .h-badge'); if(hTop) hTop.textContent = 'Paid traffic that sells • Conversion-focused LPs';
+      var h1 = $('.hero h1'); if(h1) h1.innerHTML = 'More leads, less waste: <em>grow with paid traffic</em> and high-converting landing pages.';
+      var p = $('.hero p'); if(p) p.textContent = 'ROI-driven media management + landing pages and creatives that actually convert.';
+      // Buttons
+      $all('.hero .btn').forEach(function(btn){
+        var t = btn.textContent.trim();
+        if(/Agendar diagnóstico/i.test(t)) btn.textContent = 'Book a free assessment';
+        else if(/Ver planos/i.test(t)) btn.textContent = 'See plans';
+        else if(/Ver depoimentos/i.test(t)) btn.textContent = 'See testimonials';
+      });
+      // Menu / footer quick tweaks
+      $all('nav a').forEach(function(a){
+        var t = a.textContent.trim();
+        if(t === 'Início') a.textContent = 'Home';
+        if(/Portf[oó]lio/i.test(t)) a.textContent = 'Portfolio';
+        if(/Depoimentos/i.test(t)) a.textContent = 'Testimonials';
+        if(/Contato/i.test(t)) a.textContent = 'Contact';
+        if(/Planos/i.test(t)) a.textContent = 'Plans';
+      });
+      // Sections
+      var planos = $('#planos h2'); if(planos) planos.textContent = 'Plans & Pricing';
+      var cases = $('#cases h2'); if(cases) cases.textContent = 'What clients say';
+      // CTA labels in pricing cards
+      $all('.price-card .btn').forEach(function(btn){
+        var t = btn.textContent.trim();
+        btn.textContent = t.replace(/^Escolher\\s+/i, 'Choose ');
+      });
+      // Small notes
+      var note = $('#planos small'); if(note) note.textContent = '*Ad prices excluded. Scope may vary as needed.';
+    } catch(e){ console.warn('EN localization error', e); }
+  }
+
+  function decideLocale(data){
+    try {
+      var country = (data && (data.country || data.country_code)) || '';
+      country = String(country).toUpperCase();
+      if(country === 'BR') { setBR(); return; }
+      if(country === 'PT') { /* leave default PT-PT */ return; }
+      // Everyone else => English + keep EUR
+      setEN();
+    } catch(e){ console.warn('locale decision error', e); }
+  }
+
+  // Fallbacks using language/timezone if API fails
+  function fallbackLocale(){
+    try {
+      var lang = (navigator.language || '').toLowerCase();
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if(/-br$/.test(lang)) { setBR(); return; }
+      if(/lisbon|azores/i.test(tz)) { return; } // Portugal
+      setEN();
+    } catch(e){}
+  }
+
+  // Fetch IP-based geodata
+  try {
+    var ctrl = new AbortController();
+    var tm = setTimeout(function(){ ctrl.abort(); }, 2500);
+    fetch('https://ipapi.co/json/', {signal: ctrl.signal})
+      .then(function(r){ clearTimeout(tm); return r.ok ? r.json() : null; })
+      .then(function(j){ if(j) decideLocale(j); else fallbackLocale(); })
+      .catch(function(){ fallbackLocale(); });
+  } catch(e){ fallbackLocale(); }
+})();
+</script>
+
+
+<script>
+(function(){
+  function onReady(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  function cur(){ return (document.documentElement.lang||'').toLowerCase()==='pt-br' ? 'BRL' : 'EUR'; }
+  function send(ev, params){
+    try {
+      params = params || {};
+      if(!params.currency) params.currency = cur();
+      if(window.fbq){ window.fbq('track', ev, params); }
+    } catch(e){ console && console.warn('fbq track error', e); }
+  }
+  function sendCustom(name, params){
+    try { if(window.fbq){ window.fbq('trackCustom', name, params||{}); } }
+    catch(e){ console && console.warn('fbq trackCustom error', e); }
+  }
+
+  onReady(function(){
+    // Link clicks: WhatsApp / email / phone / outbound
+    document.body.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a');
+      if(!a) return;
+      var href = a.getAttribute('href') || '';
+      var txt = (a.textContent||'').trim();
+
+      // Contact points
+      if(/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href)){
+        send('Contact', {contact_point:'WhatsApp'});
+      } else if(/^mailto:/i.test(href)){
+        send('Contact', {contact_point:'Email'});
+      } else if(/^tel:/i.test(href)){
+        send('Contact', {contact_point:'Phone'});
+      }
+
+      // Hero / CTA patterns
+      if(/agendar|diagnóstico|book/i.test(txt)){
+        send('Schedule', {content_name:'Hero CTA'});
+      }
+      if(/^(escolher|choose)/i.test(txt)){
+        send('Lead', {content_name:'Plan CTA'});
+      }
+
+      // Outbound (external) clicks
+      try{
+        var url = new URL(href, location.href);
+        if(url.origin !== location.origin){
+          sendCustom('OutboundClick', {host:url.host, path:url.pathname});
+        }
+      }catch(_){}
+    }, true);
+
+    // Section view tracking (once per section)
+    var seen = new Set();
+    function viewOnce(sel, name){
+      var el = document.querySelector(sel);
+      if(!el) return;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting && !seen.has(name)){
+            seen.add(name);
+            send('ViewContent', {content_name:name, content_category:'section'});
+            io.disconnect();
+          }
+        });
+      }, {threshold:0.5});
+      io.observe(el);
+    }
+    viewOnce('#planos','Plans');
+    viewOnce('#cases','Testimonials');
+    viewOnce('#portfolio','Portfolio');
+
+    // Scroll depth custom events (25/50/75)
+    var marks = [25,50,75], fired = {};
+    window.addEventListener('scroll', function(){
+      var d = document.documentElement, b = document.body;
+      var sc = (d.scrollTop || b.scrollTop);
+      var max = (d.scrollHeight - d.clientHeight);
+      if(max <= 0) return;
+      var pct = Math.round((sc / max) * 100);
+      marks.forEach(function(m){
+        if(!fired[m] && pct >= m){
+          fired[m] = true;
+          sendCustom('ScrollDepth', {percent:m});
+        }
+      });
+    });
+
+    // Forms -> Lead
+    document.querySelectorAll('form').forEach(function(f){
+      f.addEventListener('submit', function(){
+        var name = f.getAttribute('name') || f.getAttribute('id') || 'Form';
+        send('Lead', {content_name: name});
+      });
+    });
+  });
+})();
+</script>
+
+
+  <div class="consent-banner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies" hidden>
+    <div class="consent-wrap">
+      <div class="consent-text">
+        <strong>Usamos cookies para melhorar sua experiência.</strong> Escolha se aceita cookies de análise e marketing. 
+        Consulte a <a href="/politica-de-privacidade.html">Política de Privacidade</a>.
+      </div>
+      <div class="consent-actions">
+        <button class="btn" data-action="reject">Apenas essenciais</button>
+        <button class="btn primary" data-action="accept">Aceitar tudo</button>
+        <button class="btn link" data-action="close" aria-label="Fechar">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+  (function(){
+    var KEY='hl_consent_v2';
+    function byId(id){return document.getElementById(id);}
+    function $(s,ctx){return (ctx||document).querySelector(s);}
+    function show(el){el && (el.hidden=false);}
+    function hide(el){el && (el.hidden=true);}
+
+    function t(key){ // mini i18n based on <html lang>
+      var lang=(document.documentElement.lang||'').toLowerCase();
+      var en = {
+        title:'We use cookies to improve your experience.',
+        text:'Choose whether to allow analytics and marketing cookies. See our',
+        pp:'Privacy Policy',
+        accept:'Accept all',
+        reject:'Essentials only',
+        close:'Close'
+      };
+      var pt = {
+        title:'Usamos cookies para melhorar sua experiência.',
+        text:'Escolha se aceita cookies de análise e marketing. Consulte a',
+        pp:'Política de Privacidade',
+        accept:'Aceitar tudo',
+        reject:'Apenas essenciais',
+        close:'Fechar'
+      };
+      var dict = /en/.test(lang) ? en : pt;
+      return dict[key];
+    }
+
+    function translate(){
+      var wrap = document.querySelector('.consent-banner .consent-text');
+      if(!wrap) return;
+      // simple innerHTML rebuild to update copy
+      wrap.innerHTML = '<strong>'+t('title')+'</strong> '+t('text')+' <a href="/politica-de-privacidade.html">'+t('pp')+'</a>.';
+      var acts = document.querySelector('.consent-actions');
+      if(!acts) return;
+      var btns = acts.querySelectorAll('button');
+      btns[0].textContent = t('reject');
+      btns[1].textContent = t('accept');
+      btns[2].textContent = t('close');
+    }
+
+    function consentUpdate(acceptAll){
+      var cm = {
+        'ad_storage': acceptAll ? 'granted' : 'denied',
+        'analytics_storage': acceptAll ? 'granted' : 'denied',
+        'functionality_storage': acceptAll ? 'granted' : 'denied',
+        'security_storage': 'granted',
+        'ad_user_data': acceptAll ? 'granted' : 'denied',
+        'ad_personalization': acceptAll ? 'granted' : 'denied'
+      };
+      if(window.gtag){
+        gtag('consent','update', cm);
+      }else{
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(['consent','update', cm]);
+      }
+    }
+
+    function save(val){ try{ localStorage.setItem(KEY, val); }catch(e){} }
+    function read(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+
+    function init(){
+      translate();
+      var banner = document.querySelector('.consent-banner');
+      if(!banner) return;
+      var cur = read();
+      if(!cur){ show(banner); } else {
+        consentUpdate(cur==='all');
+        hide(banner);
+      }
+
+      banner.addEventListener('click', function(ev){
+        var act = ev.target && ev.target.getAttribute('data-action');
+        if(!act) return;
+        if(act==='accept'){ consentUpdate(true); save('all'); hide(banner); }
+        if(act==='reject'){ consentUpdate(false); save('essentials'); hide(banner); }
+        if(act==='close'){ hide(banner); } // does not set consent
+      });
+    }
+
+    if(document.readyState!=='loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+  })();
+  </script>
+
 </body>
 </html>
