@@ -24,8 +24,8 @@
 <meta content="pt_BR" property="og:locale:alternate"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <!-- Preconnect for embeds -->
-<link crossorigin="" href="https://www.instagram.com" rel="preconnect">
-<link crossorigin="" href="https://static.cdninstagram.com" rel="preconnect">
+<link crossorigin="" href="https://www.instagram.com" rel="preconnect"/>
+<link crossorigin="" href="https://static.cdninstagram.com" rel="preconnect"/>
 <!-- Security: CSP -->
 <meta content="
     default-src 'self';
@@ -177,6 +177,13 @@
 
   /* Footer microdata helpers (no visual change) */
   footer[itemscope] .small { display:block; }
+
+/* FAQ cards */
+.faq summary{list-style:none; cursor:pointer; position:relative; padding:8px 0; font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+'; position:absolute; right:0; top:8px; font-weight:700; color:var(--muted)}
+.faq[open] summary:after{content:'−'}
+.faq p, .faq ul{margin:8px 0 12px}
 </style>
 <!-- JSON-LD with expanded areas served -->
 <script type="application/ld+json">
@@ -259,14 +266,13 @@
     ]
   }
   </script>
-<link href="https://www.highlevelmkt.com/" rel="canonical"/><link href="https://www.highlevelmkt.com/" hreflang="pt-PT" rel="alternate"/><link href="https://www.highlevelmkt.com/br/" hreflang="pt-BR" rel="alternate"/><link href="https://www.highlevelmkt.com/" hreflang="x-default" rel="alternate"/><meta content="Tráfego Pago &amp; Landing Pages de Conversão | HighLevel MKT" name="twitter:title"/><meta content="Agência de tráfego pago e landing pages de conversão para Portugal e Europa. Cresça com campanhas e LPs que realmente convertem." name="twitter:description"/><!-- Optional: Google Ads conversions. Set on any page before events: 
+<link href="https://www.highlevelmkt.com/" rel="canonical"><link href="https://www.highlevelmkt.com/" hreflang="pt-PT" rel="alternate"><link href="https://www.highlevelmkt.com/br/" hreflang="pt-BR" rel="alternate"/><link href="https://www.highlevelmkt.com/" hreflang="x-default" rel="alternate"/><meta content="Tráfego Pago &amp; Landing Pages de Conversão | HighLevel MKT" name="twitter:title"/><meta content="Agência de tráfego pago e landing pages de conversão para Portugal e Europa. Cresça com campanhas e LPs que realmente convertem." name="twitter:description"/><!-- Optional: Google Ads conversions. Set on any page before events: 
 <script>window.__AW={id:'AW-XXXXXXX',lead:'LEAD_LABEL',contact:'CONTACT_LABEL',schedule:'SCHEDULE_LABEL'};</script>
 -->
 <meta content="/assets/og-pt.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="/assets/og-pt.png" name="twitter:image"/>
-
 </link></link><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "@id": "https://www.highlevelmkt.com/#faq", "mainEntity": [{"@type": "Question", "name": "O que está incluído no suporte & CRO?", "acceptedAnswer": {"@type": "Answer", "text": "Roadmap de otimizações; Métricas‑chave (leads, CPA, ROAS, CTR); Reuniões/atualizações semanais."}}, {"@type": "Question", "name": "Vocês criam a landing page?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Entregamos LPs focadas em conversão, com copy, design e setup técnico integrados ao funil."}}, {"@type": "Question", "name": "Em quanto tempo costumo ver resultados?", "acceptedAnswer": {"@type": "Answer", "text": "Geralmente 7–14 dias para as primeiras conversões; maturação completa em 30–60 dias."}}, {"@type": "Question", "name": "Qual o investimento mínimo em mídia?", "acceptedAnswer": {"@type": "Answer", "text": "Definimos por mercado e objetivo; começamos enxuto para validar oferta e criativos."}}]}, {"@type": "HowTo", "@id": "https://www.highlevelmkt.com/#howto", "name": "Como trabalhamos para gerar conversões", "step": [{"@type": "HowToStep", "name": "Diagnóstico", "text": "Entendemos oferta, público e funil."}, {"@type": "HowToStep", "name": "Plano de mídia & LP", "text": "Definimos canais, criativos e a landing page."}, {"@type": "HowToStep", "name": "Implementação", "text": "Tags (GA4, Pixel), campanhas e lançamento da LP."}, {"@type": "HowToStep", "name": "Otimização", "text": "Testes A/B, criativos e bidding para ROI."}]}]}</script></head>
 <body>
 <div class="wrap">
@@ -450,38 +456,43 @@
 </div>
 </div>
 </section>
-<section class="section" id="how-it-works">
+
+
+<section class="reveal" id="process-faq">
 <div class="container">
+<div class="two">
+<div class="card reveal" id="how-it-works">
 <h2>Como funciona</h2>
-<ol class="steps">
+<ol class="list">
 <li><strong>Diagnóstico</strong> — entendemos oferta, público e funil.</li>
 <li><strong>Plano de mídia &amp; LP</strong> — definimos canais, criativos e a landing page.</li>
 <li><strong>Implementação</strong> — tags (GA4, Pixel), campanhas e lançamento da LP.</li>
 <li><strong>Otimização</strong> — testes A/B, criativos e bidding para ROI.</li>
 </ol>
 </div>
-</section>
-<section class="section" id="faq">
-<div class="container">
+<div class="card reveal" id="faq">
 <h2>Perguntas frequentes</h2>
-<details><summary>O que está incluído no suporte &amp; CRO?</summary>
-<ul>
+<details class="faq"><summary>O que está incluído no suporte &amp; CRO?</summary>
+<ul class="list">
 <li>Roadmap de otimizações</li>
 <li>Métricas‑chave: leads, CPA, ROAS, CTR</li>
 <li>Reuniões/atualizações semanais</li>
 </ul>
 </details>
-<details><summary>Vocês criam a landing page?</summary>
-<p>Sim. Entregamos LPs focadas em conversão, com copy, design e setup técnico integrados ao funil.</p>
+<details class="faq"><summary>Vocês criam a landing page?</summary>
+<p class="muted">Sim. Entregamos LPs focadas em conversão, com copy, design e setup técnico integrados ao funil.</p>
 </details>
-<details><summary>Em quanto tempo costumo ver resultados?</summary>
-<p>Geralmente 7–14 dias para as primeiras conversões; maturação completa em 30–60 dias.</p>
+<details class="faq"><summary>Em quanto tempo costumo ver resultados?</summary>
+<p class="muted">Em média 7–14 dias para as primeiras conversões; maturação completa entre 30–60 dias.</p>
 </details>
-<details><summary>Qual o investimento mínimo em mídia?</summary>
-<p>Definimos por mercado e objetivo; começamos enxuto para validar oferta e criativos.</p>
+<details class="faq"><summary>Qual o investimento mínimo em mídia?</summary>
+<p class="muted">Definimos por mercado e objetivo; começamos enxuto para validar oferta e criativos.</p>
 </details>
 </div>
-</section><footer class="reveal" itemscope="True" itemtype="https://schema.org/Organization">
+</div>
+</div>
+</section>
+<footer class="reveal" itemscope="True" itemtype="https://schema.org/Organization">
 <div class="foot">
 <small>© <span id="year"></span> HighLevel MKT. Todos os direitos reservados.</small>
 <div><a href="#">Política de Privacidade</a> • <a href="#">Termos</a></div>
