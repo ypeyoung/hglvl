@@ -160,7 +160,28 @@
     @keyframes floaty {from{transform:translateY(0)} 50%{transform:translateY(-6px)} to{transform:translateY(0)}}
     .floaty{animation:floaty 6s ease-in-out infinite}
   
-.view-cases{color:#ffd666;text-decoration:none;border-bottom:1px dotted #ffd666} .view-cases:hover{opacity:.85}</style>
+.view-cases{color:#ffd666;text-decoration:none;border-bottom:1px dotted #ffd666} .view-cases:hover{opacity:.85}
+/* Lead form */
+.lead-form{margin:8px 0 4px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column}
+.form-field.col-span-2{grid-column:span 2}
+.form-field label{font-weight:700;margin-bottom:6px}
+.form-field input[type=text], .form-field input[type=email], .form-field input[type=tel]{
+  background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--txt);padding:10px 0 12px;font-size:16px;outline:none;
+}
+.form-field input::placeholder{color:#8f90a6}
+.form-field input:focus{border-bottom-color:var(--brand)}
+/* slider */
+.range-wrap{position:relative;padding:8px 0}
+input[type=range]{width:100%;appearance:none;background:linear-gradient(90deg,#10b981,#1e3a8a) 0/var(--pos,0%) 100% no-repeat,#26263a;height:8px;border-radius:6px;outline:none}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid #0f0f18;box-shadow:0 2px 10px rgba(0,0,0,.4);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid #0f0f18;box-shadow:0 2px 10px rgba(0,0,0,.4);cursor:pointer}
+#lf-bubble{position:absolute;top:-34px;left:0;transform:translateX(-50%);background:#0e0e16;color:#fff;border:1px solid var(--line);border-radius:10px;padding:4px 8px;font:12px/1.2 system-ui}
+.hp{display:none}
+.form-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
+@media (max-width:800px){.form-grid{grid-template-columns:1fr}.form-field.col-span-2{grid-column:span 1}}
+</style>
 <!-- JSON-LD with expanded areas served -->
 <script type="application/ld+json">
   {
@@ -326,7 +347,7 @@
 <div class="pricing">
 <div class="price-card reveal">
 <span class="pill">Essencial</span>
-<div class="price">€350</div>
+<div class="price" data-fixed="1">a consultar</div>
 <ul class="list">
 <li>1 canal (Google OU Meta)</li>
 <li>1 Landing Page simples</li>
@@ -338,7 +359,7 @@
 </div>
 <div class="price-card best reveal">
 <span class="pill">Pro</span>
-<div class="price">€650–€800</div>
+<div class="price" data-fixed="1">a consultar</div>
 <ul class="list">
 <li>Google + Meta</li>
 <li>LP avançada + A/B simples</li>
@@ -350,7 +371,7 @@
 </div>
 <div class="price-card reveal">
 <span class="pill">Premium</span>
-<div class="price">€1100+</div>
+<div class="price" data-fixed="1">a consultar</div>
 <ul class="list">
 <li>Estratégia multicanais</li>
 <li>LP premium (seções dinâmicas + prova social)</li>
@@ -417,6 +438,34 @@
 <div class="card reveal">
 <h3>Vamos começar?</h3>
 <p class="muted">Agende um diagnóstico gratuito ou peça uma proposta.</p>
+<form class="lead-form" id="lead-form" novalidate="">
+<div class="form-grid">
+<div class="form-field">
+<label for="lf-first">Nome próprio</label>
+<input autocomplete="given-name" id="lf-first" name="first_name" placeholder="Seu nome" required="" type="text"/>
+</div>
+<div class="form-field">
+<label for="lf-email">Email</label>
+<input autocomplete="email" id="lf-email" name="email" placeholder="Endereço de e-mail" required="" type="email"/>
+</div>
+<div class="form-field col-span-2">
+<label for="lf-phone">Telefone</label>
+<input autocomplete="tel" id="lf-phone" name="phone" placeholder="+351 9xx xxx xxx" type="tel"/>
+</div>
+<div class="form-field col-span-2 slider-field">
+<label for="lf-budget">Orçamento mensal aproximado</label>
+<div class="range-wrap">
+<input aria-valuemax="100000" aria-valuemin="500" aria-valuenow="5000" id="lf-budget" max="100000" min="500" name="budget" step="500" type="range" value="5000"/>
+<output for="lf-budget" id="lf-bubble">5000</output>
+</div>
+</div>
+</div>
+<input aria-hidden="true" autocomplete="off" class="hp" name="website" tabindex="-1" type="text"/>
+<div class="form-actions">
+<button class="btn white" type="submit">Vamos começar a escalar »</button>
+<p class="muted small" id="lf-success" style="display:none">✅ Sucesso! Vamos responder em breve.</p>
+</div>
+</form>
 <p>WhatsApp: <a href="https://wa.me/351934071660" rel="noopener noreferrer" target="_blank">+351 934 071 660</a><br/>E-mail: <a href="mailto:contato@highlevelmkt.com">contato@highlevelmkt.com</a></p>
 <a class="btn" href="https://wa.me/351934071660?text=Quero%20diagn%C3%B3stico%20gratuito" rel="noopener noreferrer" target="_blank">Agendar agora</a>
 </div>
@@ -520,5 +569,49 @@
       update();
     })();
   </script>
+<script id="lead-form-js">
+(function(){
+  var f=document.getElementById('lead-form'); if(!f) return;
+  var emailTo = 'vinicius.highlevelmkt@gmail.com';
+  var range = document.getElementById('lf-budget'); var bubble = document.getElementById('lf-bubble');
+  function fmt(n){ try{ return new Intl.NumberFormat('pt-PT').format(Number(n)||0); }catch(e){ return n; } }
+  function setBubble(){
+    var min=Number(range.min), max=Number(range.max), val=Number(range.value);
+    var pct = (val-min)/(max-min)*100;
+    range.style.setProperty('--pos', pct+'%');
+    bubble.textContent = fmt(val);
+    bubble.style.left = 'calc(' + pct + '%)';
+  }
+  range.addEventListener('input', setBubble); setBubble();
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if((f.website||{}).value){ return; } // honeypot
+    var first = (document.getElementById('lf-first').value||'').trim();
+    var email = (document.getElementById('lf-email').value||'').trim();
+    var phone = (document.getElementById('lf-phone').value||'').trim();
+    var budget  = (document.getElementById('lf-budget').value||'').trim();
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ document.getElementById('lf-email').reportValidity(); return; }
+
+    try{ if(window.gtag){ gtag('event','generate_lead',{method:'Lead form', value:0, currency:(window.__hl_region==='BR'?'BRL':'EUR')}); } }catch(e){}
+    try{ if(window.fbq){ fbq('track','Lead',{content_name:'Lead form'}); } }catch(e){}
+
+    var subject = encodeURIComponent('Novo lead (site)');
+    var body = [
+      'Nome: ' + first,
+      'Email: ' + email,
+      'Telefone: ' + phone,
+      'Orçamento (mês): ' + budget,
+      'URL: ' + location.href
+    ].join('\n');
+    var href = 'mailto:' + emailTo + '?subject=' + subject + '&body=' + encodeURIComponent(body);
+
+    var a=document.createElement('a'); a.href=href; a.style.display='none'; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); }, 100);
+    var ok=document.getElementById('lf-success'); if(ok){ ok.style.display='block'; }
+    f.reset(); setBubble();
+  });
+})();
+</script>
 </body>
 </html>
