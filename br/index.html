@@ -2,12 +2,14 @@
 
 <html lang="pt-BR">
 <head>
-<link crossorigin="" href="https://www.googleadservices.com" rel="preconnect"/>
-<link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Tráfego Pago &amp; Landing Pages que Convertem | HighLevel MKT</title>
-<meta content="Agência de tráfego pago e landing pages de conversão no Brasil. Cresça com campanhas e LPs que realmente convertem." name="description"/>
+<title>Tráfego Pago em Portugal, Brasil &amp; Europa | Landing Pages de Conversão | HighLevel MKT</title>
+<meta content="Agência de tráfego pago e landing pages de conversão. Atendemos Portugal (Lisboa, Cascais, Estoril, Oeiras, São Domingos de Rana), Brasil (Região dos Lagos: Iguaba Grande, Cabo Frio, Araruama, São Pedro da Aldeia) e toda a Europa. Drone como adicional." name="description"/>
+<link href="https://ypeyoung.github.io/highlevelmkt/" rel="canonical"/>
+<link href="https://ypeyoung.github.io/highlevelmkt/" hreflang="pt-PT" rel="alternate"/>
+<link href="https://ypeyoung.github.io/highlevelmkt/" hreflang="pt-BR" rel="alternate"/>
+<link href="https://ypeyoung.github.io/highlevelmkt/" hreflang="x-default" rel="alternate"/>
 <meta content="index,follow,max-image-preview:large" name="robots"/>
 <meta content="strict-origin-when-cross-origin" name="referrer"/>
 <meta content="#0f1222" name="theme-color"/>
@@ -15,10 +17,10 @@
 <link href="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true" rel="icon" sizes="32x32"/>
 <link href="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true" rel="apple-touch-icon"/>
 <!-- Open Graph / Twitter -->
-<meta content="Tráfego Pago &amp; Landing Pages que Convertem | HighLevel MKT" property="og:title"/>
-<meta content="Agência de tráfego pago e landing pages de conversão no Brasil. Cresça com campanhas e LPs que realmente convertem." property="og:description"/>
+<meta content="Tráfego Pago &amp; Landing Pages que Convertem — Portugal, Brasil &amp; Europa" property="og:title"/>
+<meta content="Gestão de mídia orientada a ROI + landing pages de alta conversão. Atuação em Portugal, Brasil e Europa. Drone como adicional." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://www.highlevelmkt.com/br/" property="og:url"/>
+<meta content="https://ypeyoung.github.io/highlevelmkt/" property="og:url"/>
 <meta content="https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true" property="og:image"/>
 <meta content="pt_PT" property="og:locale"/>
 <meta content="pt_BR" property="og:locale:alternate"/>
@@ -158,44 +160,25 @@
     @keyframes floaty {from{transform:translateY(0)} 50%{transform:translateY(-6px)} to{transform:translateY(0)}}
     .floaty{animation:floaty 6s ease-in-out infinite}
   
-
-/* merged */
-#hl-debug-badge{position:fixed;left:10px;bottom:10px;z-index:9999;background:#111;color:#fff;border:1px solid #333;border-radius:10px;padding:8px 10px;font:12px/1.3 system-ui}#hl-debug-badge b{color:#9ef}#hl-debug-badge .x{margin-left:8px;cursor:pointer}
-
-/* merged */
-
-  /* Contraste e toque mínimo */
-  .footer a { color: #ffd666; }
-  .btn, a.btn, button { min-height: 44px; min-width: 44px; padding: 12px 16px; }
-  nav a, .footer-nav a { display:inline-block; padding: 10px 8px; }
-
-  /* Seções novas */
-  .section { padding: 48px 0; }
-  .section h2 { margin-bottom: 16px; }
-  .steps { margin-left: 20px; }
-  details summary { cursor: pointer; }
-
-  /* Footer microdata helpers (no visual change) */
-  footer[itemscope] .small { display:block; }
-
-/* FAQ cards */
-.faq summary{list-style:none; cursor:pointer; position:relative; padding:8px 0; font-weight:600}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:'+'; position:absolute; right:0; top:8px; font-weight:700; color:var(--muted)}
-.faq[open] summary:after{content:'−'}
-.faq p, .faq ul{margin:8px 0 12px}
-
-/* One-line mobile nav */
-@media (max-width: 900px){
-  .nav{flex-wrap:nowrap; gap:0; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none}
-  .nav::-webkit-scrollbar{display:none}
-  .nav a{margin:0 6px; font-size:14px; padding:8px 6px}
-  header .logo-img{display:none}
+/* Lead form */
+.lead-form{margin:8px 0 4px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column}
+.form-field.col-span-2{grid-column:span 2}
+.form-field label{font-weight:700;margin-bottom:6px}
+.form-field input[type=text], .form-field input[type=email], .form-field input[type=tel], .form-field textarea{
+  background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--txt);padding:10px 0 12px;font-size:16px;outline:none;
 }
-@media (max-width: 640px){
-  .nav a{margin:0 4px; font-size:13px; padding:8px 4px}
-}
-</style>
+.form-field input::placeholder{color:#8f90a6}
+.form-field input:focus{border-bottom-color:var(--brand)}
+.range-wrap{position:relative;padding:8px 0}
+input[type=range]{width:100%;appearance:none;background:linear-gradient(90deg,#10b981,#1e3a8a) 0/var(--pos,0%) 100% no-repeat,#26263a;height:8px;border-radius:6px;outline:none}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid #0f0f18;box-shadow:0 2px 10px rgba(0,0,0,.4);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid #0f0f18;box-shadow:0 2px 10px rgba(0,0,0,.4);cursor:pointer}
+#lf-bubble{position:absolute;top:-34px;left:0;transform:translateX(-50%);background:#0e0e16;color:#fff;border:1px solid var(--line);border-radius:10px;padding:4px 8px;font:12px/1.2 system-ui}
+.hp{display:none}
+.form-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
+@media (max-width:800px){.form-grid{grid-template-columns:1fr}.form-field.col-span-2{grid-column:span 1}}</style>
 <!-- JSON-LD with expanded areas served -->
 <script type="application/ld+json">
   {
@@ -207,7 +190,7 @@
         "name": "HighLevel MKT",
         "url": "https://ypeyoung.github.io/highlevelmkt/",
         "logo": "https://github.com/ypeyoung/hglvl/blob/main/Design%20sem%20nome.png?raw=true",
-        "email": "contato@highlevelmkt.com",
+        "email": "vinicius.highlevelmkt@gmail.com",
         "telephone": "+351934071660",
         "areaServed": [
           {"@type":"Place","name":"Lisboa"},
@@ -277,24 +260,6 @@
     ]
   }
   </script>
-<meta content="Tráfego Pago &amp; Landing Pages que Convertem | HighLevel MKT" name="twitter:title"/><meta content="Agência de tráfego pago e landing pages de conversão no Brasil. Cresça com campanhas e LPs que realmente convertem." name="twitter:description"/><link href="https://www.highlevelmkt.com/br/" rel="canonical"/><link href="https://www.highlevelmkt.com/br/" hreflang="pt-BR" rel="alternate"/><link href="https://www.highlevelmkt.com/" hreflang="pt-PT" rel="alternate"><link href="https://www.highlevelmkt.com/" hreflang="x-default" rel="alternate"> <meta content="/assets/og-br.png" property="og:image"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
-<meta content="/assets/og-br.png" name="twitter:image"/>
-</link></link><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "@id": "https://www.highlevelmkt.com/br/#faq", "mainEntity": [{"@type": "Question", "name": "O que está incluído no suporte & CRO?", "acceptedAnswer": {"@type": "Answer", "text": "Roadmap de otimizações; Métricas‑chave (leads, CPA, ROAS, CTR); Reuniões/atualizações semanais."}}, {"@type": "Question", "name": "Vocês criam a landing page?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Entregamos LPs focadas em conversão, com copy, design e setup técnico integrados ao funil."}}, {"@type": "Question", "name": "Em quanto tempo costumo ver resultados?", "acceptedAnswer": {"@type": "Answer", "text": "Geralmente 7–14 dias para as primeiras conversões; maturação completa em 30–60 dias."}}, {"@type": "Question", "name": "Qual o investimento mínimo em mídia?", "acceptedAnswer": {"@type": "Answer", "text": "Definimos por mercado e objetivo; começamos enxuto para validar oferta e criativos."}}]}, {"@type": "HowTo", "@id": "https://www.highlevelmkt.com/br/#howto", "name": "Como trabalhamos para gerar conversões", "step": [{"@type": "HowToStep", "name": "Diagnóstico", "text": "Entendemos oferta, público e funil."}, {"@type": "HowToStep", "name": "Plano de mídia & LP", "text": "Definimos canais, criativos e a landing page."}, {"@type": "HowToStep", "name": "Implementação", "text": "Tags (GA4, Pixel), campanhas e lançamento da LP."}, {"@type": "HowToStep", "name": "Otimização", "text": "Testes A/B, criativos e bidding para ROI."}]}]}</script>
-  <style id="consent-css">
-    .consent-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#111;color:#eee;border-top:1px solid #333;box-shadow:0 -8px 30px rgba(0,0,0,.25)}
-    .consent-wrap{max-width:1120px;margin:0 auto;padding:14px 16px;display:flex;gap:16px;align-items:flex-start}
-    .consent-text{flex:1;font-size:.95rem;line-height:1.4}
-    .consent-actions{display:flex;gap:10px;flex-wrap:wrap}
-    .consent-actions .btn{padding:10px 14px;border-radius:10px;border:1px solid #444;background:#1f1f1f;color:#fff;cursor:pointer}
-    .consent-actions .btn.primary{background:#6F4CF3;border-color:#6F4CF3}
-    .consent-actions .btn.link{background:transparent;border-color:transparent;text-decoration:underline;color:#bbb}
-    .consent-prefs{background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:10px;margin-top:8px}
-    .consent-prefs input{accent-color:#6F4CF3}
-    @media (max-width:720px){.consent-wrap{flex-direction:column}.consent-actions{width:100%}.consent-actions .btn{flex:1}}
-  </style>
-
 </head>
 <body>
 <div class="wrap">
@@ -313,7 +278,7 @@
 <section class="hero reveal" id="topo">
 <div>
 <span class="h-badge">Tráfego pago que vende • LPs que convertem</span>
-<h1>Tráfego pago e landing pages de conversão</h1>
+<h1>Mais leads, menos desperdício: <em>cresça com tráfego pago</em> e landing pages de alta conversão.</h1>
 <p>Gestão de mídia <strong>orientada a ROI</strong> + páginas otimizadas para conversão. <u>Filmagem com drone</u> como adicional para criativos de alto impacto.</p>
 <div class="cta">
 <a class="btn" href="https://wa.me/351934071660?text=Quero%20diagn%C3%B3stico%20gratuito" rel="noopener noreferrer" target="_blank">Agendar diagnóstico gratuito</a>
@@ -327,7 +292,7 @@
 </div>
 </div>
 <div class="hero-card floaty">
-<h3 style="margin:0 0 8px">Como funciona (Brasil)</h3>
+<h3 style="margin:0 0 8px">Como funciona</h3>
 <ol class="list">
 <li>Diagnóstico e meta de negócios</li>
 <li>Plano de mídia + LP de conversão</li>
@@ -374,7 +339,7 @@
 <div class="pricing">
 <div class="price-card reveal">
 <span class="pill">Essencial</span>
-<div class="price">€350</div>
+<div class="price">R$ 650</div>
 <ul class="list">
 <li>1 canal (Google OU Meta)</li>
 <li>1 Landing Page simples</li>
@@ -386,7 +351,7 @@
 </div>
 <div class="price-card best reveal">
 <span class="pill">Pro</span>
-<div class="price">€650–€800</div>
+<div class="price">R$ 950</div>
 <ul class="list">
 <li>Google + Meta</li>
 <li>LP avançada + A/B simples</li>
@@ -398,7 +363,7 @@
 </div>
 <div class="price-card reveal">
 <span class="pill">Premium</span>
-<div class="price">€1100+</div>
+<div class="price">a consultar</div>
 <ul class="list">
 <li>Estratégia multicanais</li>
 <li>LP premium (seções dinâmicas + prova social)</li>
@@ -433,11 +398,11 @@
 <div class="two">
 <div class="card reveal">
 <h3>Portugal &amp; Espanha</h3>
-<p class="list">Lisboa, Cascais, Estoril, Oeiras, São Domingos de Rana, <strong>Carcavelos</strong>, <strong>Parede</strong>, <strong>Sintra</strong>, Amadora, Odivelas, Loures, Almada, Seixal, Setúbal, Vila Franca de Xira, <strong>Paço de Arcos</strong>, <em>Algés</em>, <em>Linda‑a‑Velha</em>, <em>Carnaxide</em>, Madrid, Getafe, Alcalá de Henares, Leganés, Móstoles, Fuenlabrada, Alcorcón, Torrejón de Ardoz, Barcelona, Badalona, L'Hospitalet de Llobregat, Sabadell, Terrassa, Sant Cugat del Vallès.</p>
+<p class="list">Lisboa, Cascais, Estoril, Oeiras, São Domingos de Rana, <strong>Carcavelos</strong>, <strong>Parede</strong>, <strong>Sintra</strong>, Amadora, Odivelas, Loures, Almada, Seixal, Setúbal, Vila Franca de Xira, <strong>Paço de Arcos</strong>, <strong>Algés</strong>, <strong>Linda‑a‑Velha</strong>, <strong>Carnaxide</strong>, Madrid, Getafe, Alcalá de Henares, Leganés, Móstoles, Fuenlabrada, Alcorcón, Torrejón de Ardoz, Barcelona, Badalona, L'Hospitalet de Llobregat, Sabadell, Terrassa, Sant Cugat del Vallès.</p>
 </div>
 <div class="card reveal">
 <h3>Brasil — Região dos Lagos (RJ)</h3>
-<p class="list">Iguaba Grande, Cabo Frio, Araruama, São Pedro da Aldeia, <em>Armação dos Búzios</em>, <em>Arraial do Cabo</em>, <em>Saquarema</em>, Rio das Ostras, Macaé, Maricá, <em>Praia Seca</em> (Araruama), <em>Tamoios/Unamar</em> (Cabo Frio), <em>Barra de São João</em> (Casimiro de Abreu).</p>
+<p class="list">Iguaba Grande, Cabo Frio, Araruama, São Pedro da Aldeia, <strong>Armação dos Búzios</strong>, <strong>Arraial do Cabo</strong>, <strong>Saquarema</strong>, Rio das Ostras, Macaé, Maricá, <strong>Praia Seca</strong> (Araruama), <strong>Tamoios/Unamar</strong> (Cabo Frio), <strong>Barra de São João</strong> (Casimiro de Abreu).</p>
 </div>
 </div>
 </section>
@@ -465,7 +430,35 @@
 <div class="card reveal">
 <h3>Vamos começar?</h3>
 <p class="muted">Agende um diagnóstico gratuito ou peça uma proposta.</p>
-<p>WhatsApp: <a href="https://wa.me/351934071660" rel="noopener noreferrer" target="_blank">+351 934 071 660</a><br/>E-mail: <a href="mailto:contato@highlevelmkt.com">contato@highlevelmkt.com</a></p>
+<form class="lead-form" id="lead-form" novalidate="">
+<div class="form-grid">
+<div class="form-field">
+<label for="lf-first">Nome próprio</label>
+<input autocomplete="given-name" id="lf-first" name="first_name" placeholder="Seu nome" required="" type="text"/>
+</div>
+<div class="form-field">
+<label for="lf-email">Email</label>
+<input autocomplete="email" id="lf-email" name="email" placeholder="Endereço de e-mail" required="" type="email"/>
+</div>
+<div class="form-field col-span-2">
+<label for="lf-phone">Telefone</label>
+<input autocomplete="tel" id="lf-phone" name="phone" placeholder="+351 9xx xxx xxx" type="tel"/>
+</div>
+<div class="form-field col-span-2 slider-field">
+<label for="lf-budget">Orçamento mensal aproximado</label>
+<div class="range-wrap">
+<input aria-valuemax="100000" aria-valuemin="500" aria-valuenow="5000" id="lf-budget" max="100000" min="500" name="budget" step="500" type="range" value="5000"/>
+<output for="lf-budget" id="lf-bubble">5000</output>
+</div>
+</div>
+</div>
+<input aria-hidden="true" autocomplete="off" class="hp" name="website" tabindex="-1" type="text"/>
+<div class="form-actions">
+<button class="btn white" type="submit">Vamos começar a escalar »</button>
+<p class="muted small" id="lf-success" style="display:none">✅ Sucesso! Vamos responder em breve.</p>
+</div>
+</form>
+<p>WhatsApp: <a href="https://wa.me/351934071660" rel="noopener noreferrer" target="_blank">+351 934 071 660</a><br/>E-mail: <a href="mailto:vinicius.highlevelmkt@gmail.com">vinicius.highlevelmkt@gmail.com</a></p>
 <a class="btn" href="https://wa.me/351934071660?text=Quero%20diagn%C3%B3stico%20gratuito" rel="noopener noreferrer" target="_blank">Agendar agora</a>
 </div>
 <div class="card reveal">
@@ -478,41 +471,7 @@
 </div>
 </div>
 </section>
-<section class="reveal" id="process-faq">
-<div class="container">
-<div class="two">
-<div class="card reveal" id="how-it-works">
-<h2>Como funciona</h2>
-<ol class="list">
-<li><strong>Diagnóstico</strong> — entendemos oferta, público e funil.</li>
-<li><strong>Plano de mídia &amp; LP</strong> — definimos canais, criativos e a landing page.</li>
-<li><strong>Implementação</strong> — tags (GA4, Pixel), campanhas e lançamento da LP.</li>
-<li><strong>Otimização</strong> — testes A/B, criativos e bidding para ROI.</li>
-</ol>
-</div>
-<div class="card reveal" id="faq">
-<h2>Perguntas frequentes</h2>
-<details class="faq"><summary>O que está incluído no suporte &amp; CRO?</summary>
-<ul class="list">
-<li>Roadmap de otimizações</li>
-<li>Métricas‑chave: leads, CPA, ROAS, CTR</li>
-<li>Reuniões/atualizações semanais</li>
-</ul>
-</details>
-<details class="faq"><summary>Vocês criam a landing page?</summary>
-<p class="muted">Sim. Entregamos LPs focadas em conversão, com copy, design e setup técnico integrados ao funil.</p>
-</details>
-<details class="faq"><summary>Em quanto tempo costumo ver resultados?</summary>
-<p class="muted">Em média 7–14 dias para as primeiras conversões; maturação completa entre 30–60 dias.</p>
-</details>
-<details class="faq"><summary>Qual o investimento mínimo em mídia?</summary>
-<p class="muted">Definimos por mercado e objetivo; começamos enxuto para validar oferta e criativos.</p>
-</details>
-</div>
-</div>
-</div>
-</section>
-<footer class="reveal" itemscope="True" itemtype="https://schema.org/Organization">
+<footer class="reveal">
 <div class="foot">
 <small>© <span id="year"></span> HighLevel MKT. Todos os direitos reservados.</small>
 <div><a href="#">Política de Privacidade</a> • <a href="#">Termos</a></div>
@@ -602,215 +561,31 @@
       update();
     })();
   </script>
-<script>
-(function() {
-  // Global region flag: 'BR', 'PT', 'INTL'
-  window.__hl_region = 'INTL';
-
-  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
-  function $all(sel, ctx){ return Array.from((ctx||document).querySelectorAll(sel)); }
-
-  function setBR() {
-    try {
-      window.__hl_region = 'BR';
-      document.documentElement.lang = 'pt-BR';
-      // Pricing in BRL (only override numbers; leave EUR markup as default elsewhere)
-      $all('.price-card').forEach(function(card){
-        var label = (card.querySelector('.pill')||{}).textContent||'';
-        var priceEl = card.querySelector('.price');
-        if(!priceEl) return;
-        var t = label.trim().toLowerCase();
-        if(t === 'essencial'){ priceEl.textContent = 'R$ 650'; }
-        else if(t === 'pro'){ priceEl.textContent = 'R$ 950'; }
-        else if(t === 'premium'){ priceEl.textContent = 'a consultar'; }
-      });
-    } catch(e){ console.warn('BR localization error', e); }
-  }
-
-  function setEN() {
-    try {
-      window.__hl_region = 'INTL';
-      document.documentElement.lang = 'en';
-      var hTop = $('.hero .h-badge'); if(hTop) hTop.textContent = 'Paid traffic that sells • Conversion-focused LPs';
-      var h1 = $('.hero h1'); if(h1) h1.innerHTML = 'More leads, less waste: <em>grow with paid traffic</em> and high-converting landing pages.';
-      var p = $('.hero p'); if(p) p.textContent = 'ROI-driven media management + landing pages and creatives that actually convert.';
-      $all('.hero .btn').forEach(function(btn){
-        var t = btn.textContent.trim();
-        if(/Agendar diagnóstico/i.test(t)) btn.textContent = 'Book a free assessment';
-        else if(/Ver planos/i.test(t)) btn.textContent = 'See plans';
-        else if(/Ver depoimentos/i.test(t)) btn.textContent = 'See testimonials';
-      });
-      $all('nav a').forEach(function(a){
-        var t = a.textContent.trim();
-        if(t === 'Início') a.textContent = 'Home';
-        if(/Portf[oó]lio/i.test(t)) a.textContent = 'Portfolio';
-        if(/Depoimentos/i.test(t)) a.textContent = 'Testimonials';
-        if(/Contato/i.test(t)) a.textContent = 'Contact';
-        if(/Planos/i.test(t)) a.textContent = 'Plans';
-      });
-      var planos = $('#planos h2'); if(planos) planos.textContent = 'Plans & Pricing';
-      var cases = $('#cases h2'); if(cases) cases.textContent = 'What clients say';
-      $all('.price-card .btn').forEach(function(btn){
-        var t = btn.textContent.trim();
-        btn.textContent = t.replace(/^Escolher\s+/i, 'Choose ');
-      });
-      var note = $('#planos small'); if(note) note.textContent = '*Ad prices excluded. Scope may vary as needed.';
-    } catch(e){ console.warn('EN localization error', e); }
-  }
-
-  function inBrazilTZ(){
-    try{
-      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-      return /america\/(sao_paulo|fortaleza|belem|manaus|cuiaba|bahia|porto_velho|boa_vista|eirunepe|rio_branco|santarem|araguaina|maceio|recife|noronha|campo_grande)/i.test(tz);
-    }catch(e){ return false; }
-  }
-
-  // Strict decision: BR only when IP says BR. Fallback: Brazil TZ + pt-BR language.
-  function decideLocale(data){
-    var country = (data && (data.country || data.country_code)) || '';
-    country = String(country).toUpperCase();
-
-    if(country === 'BR'){ setBR(); return; }
-    if(country === 'PT'){ window.__hl_region = 'PT'; return; }
-
-    // VPN fallback for residents in BR: require BOTH tz in Brazil AND language pt-BR
-    var lang = (navigator.language || '').toLowerCase();
-    if(country !== 'BR' && inBrazilTZ() && /-br$/.test(lang)){ setBR(); return; }
-
-    // Everyone else => English (EUR stays as in markup)
-    setEN();
-  }
-
-  function fallbackLocale(){
-    try {
-      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-      var lang = (navigator.language || '').toLowerCase();
-      if(/(lisbon|azores)/i.test(tz)) { window.__hl_region = 'PT'; return; }
-      if(inBrazilTZ() && /-br$/.test(lang)) { setBR(); return; }
-      setEN();
-    } catch(e){ setEN(); }
-  }
-
-  // URL override for QA (?hl=br|pt|en)
-  (function(){
-    var params = new URLSearchParams(location.search);
-    var hl = (params.get('hl')||'').toLowerCase();
-    if(hl==='br'){ setBR(); return; }
-    if(hl==='pt'){ window.__hl_region = 'PT'; return; }
-    if(hl==='en'){ setEN(); return; }
-  })();
-
-  try {
-    var ctrl = new AbortController();
-    var tm = setTimeout(function(){ ctrl.abort(); }, 2500);
-    fetch('https://ipapi.co/json/', {signal: ctrl.signal})
-      .then(function(r){ clearTimeout(tm); return r && r.ok ? r.json() : null; })
-      .then(function(j){ if(j) decideLocale(j); else fallbackLocale(); })
-      .catch(function(){ fallbackLocale(); });
-  } catch(e){ fallbackLocale(); }
-})();
-</script>
-<div hidden="True" id="hl-debug-badge"></div><script>(function(){function s(){var e=document.getElementById('hl-debug-badge');if(!e)return;e.hidden=false;var t=(localStorage.getItem('hl_consent_v2')||'none');var p={};try{p=JSON.parse(localStorage.getItem('hl_consent_prefs_v2')||'{}')}catch(_){};var r=window.__hl_region||'INTL';var c=(r==='BR'?'BRL':'EUR');e.innerHTML='Region: <b>'+r+'</b> • Currency: <b>'+c+'</b> • Consent: <b>'+t+'</b><span class="x" title="hide">✕</span>';e.querySelector('.x').onclick=function(){e.hidden=true};}function m(){var q=new URLSearchParams(location.search);if(q.get('debug')==='1'){s();return}window.addEventListener('keydown',function(e){if(e.shiftKey&&e.key.toLowerCase()==='d'){s()}},{once:true})}if(document.readyState!=='loading')m();else document.addEventListener('DOMContentLoaded',m);})();</script><script>(function(){function a(s,c){return Array.from((c||document).querySelectorAll(s));}document.documentElement.lang='pt-BR';window.__hl_region='BR';function p(){a('.price-card').forEach(function(card){var label=(card.querySelector('.pill')||{}).textContent||'';var priceEl=card.querySelector('.price');if(!priceEl)return;var t=label.trim().toLowerCase();if(t==='essencial'){priceEl.textContent='R$ 650';}else if(t==='pro'){priceEl.textContent='R$ 950';}else if(t==='premium'){priceEl.textContent='a consultar';}});}if(document.readyState!=='loading')p();else document.addEventListener('DOMContentLoaded',p);})();</script><script>
+<script id="lead-form-js">
 (function(){
-  function on(el, ev, fn){ if(!el) return; el.addEventListener(ev, fn); }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('.cookie-prefs');
-    if(!a) return;
-    e.preventDefault();
-    var b = document.querySelector('.consent-banner');
-    if(b){ b.hidden = false; window.scrollTo({top:0, behavior:'smooth'}); }
-  }, true);
-})();</script>
-  <div class="consent-banner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies" hidden>
-    <div class="consent-wrap">
-      <div class="consent-text">
-        <strong>Usamos cookies para melhorar sua experiência.</strong> Escolha se aceita cookies de análise e marketing.
-        Consulte a <a href="/politica-de-cookies.html">Política de Cookies</a>.
-        <div class="consent-prefs" hidden>
-          <label style="display:flex;gap:8px;align-items:center;margin:4px 0;">
-            <input type="checkbox" data-pref="analytics"> <span>Cookies de análise</span>
-          </label>
-          <label style="display:flex;gap:8px;align-items:center;margin:4px 0;">
-            <input type="checkbox" data-pref="marketing"> <span>Cookies de marketing</span>
-          </label>
-          <div style="display:flex;gap:8px;margin-top:8px;">
-            <button class="btn" data-action="save-prefs">Guardar preferências</button>
-          </div>
-        </div>
-      </div>
-      <div class="consent-actions">
-        <button class="btn" data-action="reject">Apenas essenciais</button>
-        <button class="btn primary" data-action="accept">Aceitar tudo</button>
-        <button class="btn" data-action="prefs">Personalizar</button>
-        <button class="btn link" data-action="close" aria-label="Fechar">Fechar</button>
-      </div>
-    </div>
-  </div>
+  var f=document.getElementById('lead-form'); if(!f) return;
+  var emailTo = 'vinicius.highlevelmkt@gmail.com';
+  var range = document.getElementById('lf-budget'); var bubble = document.getElementById('lf-bubble');
+  function fmt(n){ try{ return new Intl.NumberFormat('pt-PT').format(Number(n)||0); }catch(e){ return n; } }
+  function setBubble(){
+    var min=Number(range.min), max=Number(range.max), val=Number(range.value);
+    var pct=(val-min)/(max-min)*100; range.style.setProperty('--pos', pct+'%'); bubble.textContent=fmt(val); bubble.style.left='calc('+pct+'%)';
+  }
+  if(range){ range.addEventListener('input', setBubble); setBubble(); }
 
-  <script id="consent-js">
-  (function(){
-    var KEY='hl_consent_v2', PREFS_KEY='hl_consent_prefs_v2', TTL_DAYS=180;
-    function t(key){
-      var lang=(document.documentElement.lang||'').toLowerCase();
-      var en={title:'We use cookies to improve your experience.',text:'Choose whether to allow analytics and marketing cookies. See our',pp:'Cookie Policy',accept:'Accept all',reject:'Essentials only',close:'Close',prefs:'Personalize',save:'Save preferences'};
-      var pt={title:'Usamos cookies para melhorar sua experiência.',text:'Escolha se aceita cookies de análise e marketing. Consulte a',pp:'Política de Cookies',accept:'Aceitar tudo',reject:'Apenas essenciais',close:'Fechar',prefs:'Personalizar',save:'Guardar preferências'};
-      var d=/en/.test(lang)?en:pt; return d[key];
-    }
-    function translate(){
-      var w=document.querySelector('.consent-text'); if(!w) return;
-      w.innerHTML='<strong>'+t('title')+'</strong> '+t('text')+' <a href="/politica-de-cookies.html">'+t('pp')+'</a>.'+w.innerHTML.match(/<div class="consent-prefs"[\s\S]*/)[0];
-      var acts=document.querySelector('.consent-actions'); if(!acts) return;
-      var btns=acts.querySelectorAll('button');
-      btns[0].textContent=t('reject'); btns[1].textContent=t('accept'); btns[2].textContent=t('prefs'); btns[3].textContent=t('close');
-      var save=document.querySelector('[data-action="save-prefs"]'); if(save) save.textContent=t('save');
-    }
-    function save(val){ try{ localStorage.setItem(KEY, JSON.stringify({v:val, ts:Date.now()})); }catch(e){} }
-    function read(){ try{ var x=JSON.parse(localStorage.getItem(KEY)||'null'); return x; }catch(e){ return null; } }
-    function expired(obj){ if(!obj||!obj.ts) return true; var ms=TTL_DAYS*24*60*60*1000; return (Date.now()-obj.ts)>ms; }
-    function savePrefs(p){ try{ localStorage.setItem(PREFS_KEY, JSON.stringify(p||{})); }catch(e){} }
-    function readPrefs(){ try{ return JSON.parse(localStorage.getItem(PREFS_KEY)||'{}'); }catch(e){ return {}; } }
-    function consentUpdate(acceptAll, prefs){
-      var marketing = acceptAll || (prefs && prefs.marketing===true);
-      var analytics = acceptAll || (prefs && prefs.analytics===true);
-      var cm = {
-        'ad_storage': marketing ? 'granted' : 'denied',
-        'analytics_storage': analytics ? 'granted' : 'denied',
-        'functionality_storage': analytics ? 'granted' : 'denied',
-        'security_storage': 'granted',
-        'ad_user_data': marketing ? 'granted' : 'denied',
-        'ad_personalization': marketing ? 'granted' : 'denied'
-      };
-      if(window.gtag){ gtag('consent','update', cm); }
-    }
-    function ensureShow(){
-      var b=document.querySelector('.consent-banner');
-      if(!b) return;
-      var cur=read();
-      if(!cur || expired(cur)){ b.hidden=false; }
-    }
-    function init(){
-      translate();
-      var b=document.querySelector('.consent-banner');
-      if(!b) return;
-      var rec=read(), prefs=readPrefs();
-      if(!rec || expired(rec)){ b.hidden=false; } else {
-        consentUpdate(rec.v==='all', prefs);
-        if((rec.v==='all') || (prefs && prefs.marketing===true)){ if(window.__hl_loadMetaPixel) window.__hl_loadMetaPixel(); }
-      }
-      b.addEventListener('click', function(ev){
-        var act=ev.target && ev.target.getAttribute('data-action'); if(!act) return;
-        if(act==='accept'){ consentUpdate(true); save('all'); if(window.__hl_loadMetaPixel) window.__hl_loadMetaPixel(); b.hidden=true; }
-        if(act==='reject'){ consentUpdate(false, {analytics:false,marketing:false}); save('essentials'); savePrefs({analytics:false,marketing:false}); b.hidden=true; }
-        if(act==='prefs'){ var p=document.querySelector('.consent-prefs'); if(p){ var cur=readPrefs(); p.querySelector('[data-pref="analytics"]').checked=!!cur.analytics; p.querySelector('[data-pref="marketing"]').checked=!!cur.marketing; p.hidden=!p.hidden; } }
-        if(act==='save-prefs'){ var p=document.querySelector('.consent-prefs'); if(!p) return; var analytics = p.querySelector('[data-pref="analytics"]').checked; var marketing = p.querySelector('[data-pref="marketing"]').checked; save('custom'); savePrefs({analytics:analytics,marketing:marketing}); consentUpdate(false,{analytics:analytics,marketing:marketing}); if(marketing && window.__hl_loadMetaPixel) window.__hl_loadMetaPixel(); b.hidden=true; }
-        if(act==='close'){ b.hidden=true; }
-      });
-      // Failsafe: force show after 1s if still hidden and no record
-      setTimeout(ensureShow, 1000);
-    }
-    if(document.readyState!=='loading') init(); else document.addEventListener('DOMContentLoaded', init);
-  })();
-  </script>
-
-</body>
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault(); if((f.website||{}).value){ return; }
+    var first=(document.getElementById('lf-first').value||'').trim();
+    var email=(document.getElementById('lf-email').value||'').trim();
+    var phone=(document.getElementById('lf-phone').value||'').trim();
+    var budget=(document.getElementById('lf-budget').value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ document.getElementById('lf-email').reportValidity(); return; }
+    try{ if(window.gtag){ gtag('event','generate_lead',{method:'Lead form', value:0, currency:(window.__hl_region==='BR'?'BRL':'EUR')}); } }catch(e){}
+    try{ if(window.fbq){ fbq('track','Lead',{content_name:'Lead form'}); } }catch(e){}
+    var subject=encodeURIComponent('Novo lead (site)');
+    var body=encodeURIComponent(['Nome: '+first,'Email: '+email,'Telefone: '+phone,'Orçamento (mês): '+budget,'URL: '+location.href].join('\n'));
+    var href='mailto:'+emailTo+'?subject='+subject+'&body='+body; var a=document.createElement('a'); a.href=href; a.style.display='none'; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); },100);
+    var ok=document.getElementById('lf-success'); if(ok){ ok.style.display='block'; } f.reset(); if(range) setBubble();
+  });
+})();</script></body>
 </html>
