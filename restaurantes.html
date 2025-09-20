@@ -14,6 +14,33 @@
   })(window,document,'script','dataLayer','GTM-PBGC7NC6');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1080854817217690');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1080854817217690&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R5Z5ZNS5P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3R5Z5ZNS5P');
+  </script>
+
   <style>
     :root {
       --bg: #0f1222; --text: #f2f4ff; --muted: #9aa4bf; --brand: #ff7e42; --accent: #7c5cff;
@@ -32,14 +59,12 @@
     .btn.accent {background: var(--accent); color:#fff}
     .btn:hover {opacity:.9; transform: translateY(-2px)}
 
-    /* Hero */
     .hero {display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:40px; padding:80px 0;}
     .hero h1 {font-size: clamp(30px, 5vw, 54px); margin-bottom:16px}
     .hero p {color: var(--muted); margin-bottom:24px; font-size:18px}
     .kpis {display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
     .kpi {background:var(--card); padding:20px; border-radius:var(--radius); text-align:center}
 
-    /* Pricing */
     .pricing {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; align-items:stretch}
     .price-card {display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(180deg, rgba(255,126,66,.25), rgba(124,92,255,.25)); padding:28px; border-radius:var(--radius); text-align:center; box-shadow:var(--shadow); transition:.3s ease}
     .price-card:hover {transform:scale(1.05)}
@@ -47,15 +72,15 @@
     .price {font-size:2rem; font-weight:700; margin:16px 0; color:var(--brand)}
     .price-card .btn {margin-top:20px; align-self:center}
 
-    /* Testimonials */
     .testimonials-box {background:var(--card); padding:40px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:40px}
     .testimonials {position:relative; overflow:hidden; margin-top:20px}
     .testi-slides {display:flex; transition:transform .4s ease}
     .testi {min-width:100%; padding:30px;}
     .testi blockquote {font-style:italic; color:#dfe3ff; font-size:18px;}
     .testi cite {display:block; margin-top:8px; color:var(--muted)}
+    .navbtn {position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.4); border:none; color:#fff; padding:10px; cursor:pointer; border-radius:50%}
+    .prev {left:10px} .next {right:10px}
 
-    /* Contact */
     #contato .contact-box {background:var(--card); padding:40px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:40px}
     form {display:grid; gap:16px; max-width:600px; margin:20px auto}
     input, textarea {padding:12px; border-radius:var(--radius); border:1px solid #333; background:#0e1220; color:#fff}
@@ -143,6 +168,8 @@
             <div class="testi"><blockquote>“O Silk Beach em Búzios conseguiu aumentar as reservas de turistas estrangeiros no verão sem aumentar o orçamento.”</blockquote><cite>— Silk Beach, Búzios</cite></div>
             <div class="testi"><blockquote>“O Latina Grill em Cascais passou a receber mais clientes locais durante a semana com anúncios segmentados.”</blockquote><cite>— Latina Grill, Cascais</cite></div>
           </div>
+          <button class="navbtn prev" onclick="moveSlide('testiSlides',-1)">‹</button>
+          <button class="navbtn next" onclick="moveSlide('testiSlides',1)">›</button>
         </div>
       </div>
     </section>
@@ -167,6 +194,16 @@
   </div>
 
   <script>
+    // Slide depoimentos
+    function moveSlide(id,dir){
+      const slider=document.getElementById(id);
+      const total=slider.children.length;
+      let index=Number(slider.getAttribute('data-index')||0);
+      index=(index+dir+total)%total;
+      slider.style.transform='translateX('+(-index*100)+'%)';
+      slider.setAttribute('data-index',index);
+    }
+
     // Form submission + dataLayer
     document.getElementById('lead-form').addEventListener('submit', function(e){
       e.preventDefault();
@@ -183,7 +220,7 @@
       });
 
       const subject=encodeURIComponent('Novo lead Restaurante');
-      const body=encodeURIComponent('Nome: '+name+'\nEmail: '+email+'\nTelefone: '+phone+'\nMensagem: '+msg);
+      const body=encodeURIComponent('Nome: '+name+'\\nEmail: '+email+'\\nTelefone: '+phone+'\\nMensagem: '+msg);
       window.location.href='mailto:vinicius.highlevelmkt@gmail.com?subject='+subject+'&body='+body;
 
       alert('Obrigado! Seus dados foram enviados.');
