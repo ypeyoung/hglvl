@@ -1,63 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mais Clientes Para o Seu Restaurante | High Level Marketing</title>
-<meta name="description" content="Transforme seu restaurante em referência: tráfego pago, vídeos profissionais, landing pages e gestão digital completa para aumentar reservas e pedidos."/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mais Clientes Para o Seu Restaurante | High Level Marketing</title>
+  <meta name="description" content="Transforme seu restaurante em referência: tráfego pago, vídeos profissionais, landing pages e gestão digital completa para aumentar reservas e pedidos."/>
 
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PBGC7NC6');</script>
+  <!-- End Google Tag Manager -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PBGC7NC6');</script>
-<!-- End Google Tag Manager -->
+  <style>
+    :root {
+      --bg: #0f1222; --text: #f2f4ff; --muted: #9aa4bf; --brand: #ff7e42; --accent: #7c5cff;
+      --card: #161a2e; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px; --maxw: 1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+    body {font-family: 'Segoe UI', Roboto, Arial; background: var(--bg); color: var(--text); line-height:1.6;}
+    a {color: var(--brand); text-decoration:none}
+    .container {max-width: var(--maxw); margin:0 auto; padding:20px}
+    header {display:flex; justify-content:space-between; align-items:center; padding:20px 0; flex-wrap:wrap}
+    header h3 {color: var(--brand); font-weight:700}
+    nav a {margin:0 12px; color: var(--muted); font-weight:500;}
+    .btn {display:inline-block; padding:12px 20px; border-radius: var(--radius); font-weight:600; cursor:pointer; box-shadow:var(--shadow); transition:.2s ease}
+    .btn.primary {background: var(--brand); color:#fff}
+    .btn.accent {background: var(--accent); color:#fff}
+    .btn:hover {opacity:.9; transform: translateY(-2px)}
 
+    /* Hero */
+    .hero {display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:40px; padding:80px 0;}
+    .hero h1 {font-size: clamp(30px, 5vw, 54px); margin-bottom:16px}
+    .hero p {color: var(--muted); margin-bottom:24px; font-size:18px}
+    .kpis {display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
+    .kpi {background:var(--card); padding:20px; border-radius:var(--radius); text-align:center}
 
-<style>
-:root {
---bg: #0f1222; --text: #f2f4ff; --muted: #9aa4bf; --brand: #ff7e42; --accent: #7c5cff;
---card: #161a2e; --shadow: 0 10px 30px rgba(0,0,0,.35);
---radius: 16px; --maxw: 1200px;
-}
-*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-body {font-family: 'Segoe UI', Roboto, Arial; background: var(--bg); color: var(--text); line-height:1.6;}
-a {color: var(--brand); text-decoration:none}
-.container {max-width: var(--maxw); margin:0 auto; padding:20px}
-header {display:flex; justify-content:space-between; align-items:center; padding:20px 0; flex-wrap:wrap}
-header h3 {color: var(--brand); font-weight:700}
-nav a {margin:0 12px; color: var(--muted); font-weight:500;}
-.btn {display:inline-block; padding:12px 20px; border-radius: var(--radius); font-weight:600; cursor:pointer; box-shadow:var(--shadow); transition:.2s ease}
-.btn.primary {background: var(--brand); color:#fff}
-.btn.accent {background: var(--accent); color:#fff}
-.btn:hover {opacity:.9; transform: translateY(-2px)}
+    /* Pricing */
+    .pricing {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px}
+    .price-card {background:linear-gradient(180deg, rgba(255,126,66,.25), rgba(124,92,255,.25)); padding:28px; border-radius:var(--radius); text-align:center; box-shadow:var(--shadow); transition:.3s ease}
+    .price-card:hover {transform:scale(1.05)}
+    .price-card.best {outline:2px solid var(--brand)}
+    .price {font-size:2rem; font-weight:700; margin:16px 0; color:var(--brand)}
 
+    /* Testimonials */
+    .testimonials-box {background:var(--card); padding:40px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:40px}
+    .testimonials {position:relative; overflow:hidden; margin-top:20px}
+    .testi-slides {display:flex; transition:transform .4s ease}
+    .testi {min-width:100%; padding:30px;}
+    .testi blockquote {font-style:italic; color:#dfe3ff; font-size:18px;}
+    .testi cite {display:block; margin-top:8px; color:var(--muted)}
 
-/* Hero */
-.hero {display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:40px; padding:80px 0;}
-.hero h1 {font-size: clamp(30px, 5vw, 54px); margin-bottom:16px}
-.hero p {color: var(--muted); margin-bottom:24px; font-size:18px}
-.kpis {display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px}
-.kpi {background:var(--card); padding:20px; border-radius:var(--radius); text-align:center}
+    /* Contact */
+    #contato .contact-box {background:var(--card); padding:40px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:40px}
+    form {display:grid; gap:16px; max-width:600px; margin:20px auto}
+    input, textarea {padding:12px; border-radius:var(--radius); border:1px solid #333; background:#0e1220; color:#fff}
+    input:focus, textarea:focus {outline:none; border-color:var(--brand)}
 
+    footer {padding:30px 0; text-align:center; color:var(--muted); font-size:14px}
 
-/* Pricing */
-.pricing {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px}
-.price-card {background:linear-gradient(180deg, rgba(255,126,66,.25), rgba(124,92,255,.25)); padding:28px; border-radius:var(--radius); text-align:center; box-shadow:var(--shadow); transition:.3s ease}
-.price-card:hover {transform:scale(1.05)}
-.price-card.best {outline:2px solid var(--brand)}
-.price {font-size:2rem; font-weight:700; margin:16px 0; color:var(--brand)}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      nav {margin-top:10px; text-align:center; width:100%}
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBGC7NC6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
+  <div class="container">
+    <header>
+      <h3>High Level Marketing</h3>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#planos">Planos</a>
+        <a href="#cases">Depoimentos</a>
+        <a href="#contato">Contato</a>
+        <a href="https://www.highlevelmkt.com/portfolio.html" target="_blank">Portfólio</a>
+      </nav>
+    </header>
 
-/* Testimonials */
-.testimonials-box {background:var(--card); padding:40px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:40px}
-.testimonials {position:relative; overflow:hidden; margin-top:20px}
-.testi-slides {display:flex; transition:transform .4s ease}
-.testi {min-width:100%; padding:30px;}
-.testi blockquote {font-style:italic; color:#dfe3ff; font-size:18px;}
-.testi cite {display:block; margin-top:8px; color:var(--muted)}
+    <section class="hero">
+      <div>
+        <h1>Lotamos o seu restaurante com marketing estratégico</h1>
+        <p>Chega de mesas vazias. Criamos campanhas que transformam visualizações em reservas e seguidores em clientes fiéis. Do anúncio à conversão, nós cuidamos de tudo.</p>
+        <a class="btn primary whatsapp-link" href="https://wa.me/351934071660" target="_blank">Agendar diagnóstico gratuito</a>
+        <a class="btn accent" href="#planos">Ver planos</a>
+        <div class="kpis">
+          <div class="kpi"><b>+65%</b><br/>Reservas mensais garantidas</div>
+          <div class="kpi"><b>-30%</b><br/>Custo por cliente reduzido</div>
+          <div class="kpi"><b>3,2x</b><br/>Retorno sobre investimento</div>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Restaurante" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow)">
+      </div>
+    </section>
 
+    <section id="planos">
+      <h2>Planos sob medida</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Essencial</h3>
+          <div class="price">€300</div>
+          <p>• Drone 4K com 4–6 fotos de impacto<br/>• 1 vídeo vertical 45–60s + 1 extra de 15–30s<br/>• Configuração de 1 canal de anúncios (Google ou Meta)<br/>• Ideal para quem quer começar sem site</p>
+          <a class="btn primary whatsapp-link plan-essencial" href="https://wa.me/351934071660?text=Quero%20o%20Plano%20Essencial" target="_blank">Quero este plano</a>
+        </div>
+        <div class="price-card best">
+          <h3>Pro</h3>
+          <div class="price"><s>€700</s> €550</div>
+          <p>• Landing page com formulário + WhatsApp integrado<br/>• Medição básica de visitas e pedidos de contacto<br/>• 3 vídeos profissionais/mês<br/>• Gestão completa de Google e Meta Ads<br/>• Google Meu Negócio otimizado<br/>• Social media pack: 12 posts feed + 8 stories</p>
+          <a class="btn accent whatsapp-link plan-pro" href="https://wa.me/351934071660?text=Quero%20o%20Plano%20Pro" target="_blank">Quero este plano</a>
+        </div>
+        <div class="price-card">
+          <h3>Premium</h3>
+          <div class="price"><s>€1100</s> €950</div>
+          <p>• Tudo do Essencial + Pro<br/>• Landing page premium com CRO avançado<br/>• Dashboard em tempo real com métricas<br/>• 5–6 vídeos/mês + cortes extras para redes sociais<br/>• Gestão completa de redes sociais (feed + stories)<br/>• Consultoria estratégica mensal personalizada<br/>• Integração com CRM para gestão de leads<br/>• Campanhas multicanais com segmentação avançada</p>
+          <a class="btn primary whatsapp-link plan-premium" href="https://wa.me/351934071660?text=Quero%20o%20Plano%20Premium" target="_blank">Quero este plano</a>
+        </div>
+      </div>
+    </section>
 
-/* Contact */
+    <section id="cases">
+      <div class="testimonials-box">
+        <h2>Histórias de sucesso</h2>
+        <div class="testimonials">
+          <div class="testi-slides" id="testiSlides">
+            <div class="testi"><blockquote>“Nosso restaurante em Búzios passou a lotar todos os fins de semana.”</blockquote><cite>— Restaurante Mar Azul, Búzios</cite></div>
+            <div class="testi"><blockquote>“No Cabo Frio, os pedidos de delivery cresceram 120%.”</blockquote><cite>— Cantina Italiana, Cabo Frio</cite></div>
+            <div class="testi"><blockquote>“Transformaram nosso negócio em referência no bairro.”</blockquote><cite>— Churrasqueira do Bairro, Cacém</cite></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="contact-box">
+        <h2>Vamos conversar?</h2>
+        <p style="text-align:center">Agende um diagnóstico gratuito e descubra como podemos aumentar as suas reservas e vendas.</p>
+        <form id="lead-form">
+          <input type="text" id="lf-name" placeholder="Seu nome" required>
+          <input type="email" id="lf-email" placeholder="Seu e-mail" required>
+          <input type="tel" id="lf-phone" placeholder="Seu telefone">
+          <textarea id="lf-msg" placeholder="Mensagem" rows="4"></textarea>
+          <button class="btn primary" type="submit">Quero crescer meu restaurante</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 High Level Marketing — Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    // slide depoimentos (manual)
+    function moveSlide(id,dir){
+      const slider=document.getElementById(id);
+      const total=slider.children.length;
+      let index=Number(slider.getAttribute('data-index')||0);
+      index=(index+dir+total)%total;
+      slider.style.transform='translateX('+(-index*100)+'%)';
+      slider.setAttribute('data-index',index);
+    }
+
+    // Form submission + dataLayer
+    document.getElementById('lead-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name=document.getElementById('lf-name').value;
+      const email=document.getElementById('lf-email').value;
+      const phone=document.getElementById('lf-phone').value;
+      const msg=document.getElementById('lf-msg').value;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'lead_submit',
+        form_id: 'lead-form',
+        form_location: 'contato'
+      });
+
+      const subject=encodeURIComponent('Novo lead Restaurante');
+      const body=encodeURIComponent('Nome: '+name+'\\nEmail: '+email+'\\nTelefone: '+phone+'\\nMensagem: '+msg);
+      window.location.href='mailto:vinicius.highlevelmkt@gmail.com?subject='+subject+'&body='+body;
+
+      alert('Obrigado! Seus dados foram enviados.');
+    });
+
+    // WhatsApp + Planos tracking
+    document.querySelectorAll('.whatsapp-link').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event:'contact_whatsapp', location:el.dataset.loc||'geral'});
+      });
+    });
+
+    document.querySelectorAll('.plan-essencial').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event:'select_plan', plan_name:'Essencial', plan_price:'300'});
+      });
+    });
+    document.querySelectorAll('.plan-pro').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event:'select_plan', plan_name:'Pro', plan_price:'550'});
+      });
+    });
+    document.querySelectorAll('.plan-premium').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event:'select_plan', plan_name:'Premium', plan_price:'950'});
+      });
+    });
+  </script>
+</body>
+</html>
