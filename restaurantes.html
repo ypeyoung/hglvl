@@ -40,11 +40,12 @@
     .kpi {background:var(--card); padding:20px; border-radius:var(--radius); text-align:center}
 
     /* Pricing */
-    .pricing {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px}
-    .price-card {background:linear-gradient(180deg, rgba(255,126,66,.25), rgba(124,92,255,.25)); padding:28px; border-radius:var(--radius); text-align:center; box-shadow:var(--shadow); transition:.3s ease}
+    .pricing {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; align-items:stretch}
+    .price-card {display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(180deg, rgba(255,126,66,.25), rgba(124,92,255,.25)); padding:28px; border-radius:var(--radius); text-align:center; box-shadow:var(--shadow); transition:.3s ease}
     .price-card:hover {transform:scale(1.05)}
     .price-card.best {outline:2px solid var(--brand)}
     .price {font-size:2rem; font-weight:700; margin:16px 0; color:var(--brand)}
+    .price-card .btn {margin-top:20px; align-self:center}
 
     /* Testimonials */
     .testimonials-box {background:var(--card); padding:40px; border-radius:var(--radius); box-shadow:var(--shadow); margin-top:40px}
@@ -107,21 +108,27 @@
       <h2>Planos sob medida</h2>
       <div class="pricing">
         <div class="price-card">
-          <h3>Essencial</h3>
-          <div class="price">€300</div>
-          <p>• Drone 4K com 4–6 fotos de impacto<br/>• 1 vídeo vertical 45–60s + 1 extra de 15–30s<br/>• Configuração de 1 canal de anúncios (Google ou Meta)<br/>• Ideal para quem quer começar sem site</p>
+          <div>
+            <h3>Essencial</h3>
+            <div class="price">€300</div>
+            <p>• Drone 4K com 4–6 fotos de impacto<br/>• 1 vídeo vertical 45–60s + 1 extra de 15–30s<br/>• Configuração de 1 canal de anúncios (Google ou Meta)<br/>• Ideal para quem quer começar sem site</p>
+          </div>
           <a class="btn primary whatsapp-link plan-essencial" href="https://wa.me/351934071660?text=Quero%20o%20Plano%20Essencial" target="_blank">Quero este plano</a>
         </div>
         <div class="price-card best">
-          <h3>Pro</h3>
-          <div class="price"><s>€700</s> €550</div>
-          <p>• Landing page com formulário + WhatsApp integrado<br/>• Medição básica de visitas e pedidos de contacto<br/>• 3 vídeos profissionais/mês<br/>• Gestão completa de Google e Meta Ads<br/>• Google Meu Negócio otimizado<br/>• Social media pack: 12 posts feed + 8 stories</p>
+          <div>
+            <h3>Pro</h3>
+            <div class="price"><s>€700</s> €550</div>
+            <p>• Landing page com formulário + WhatsApp integrado<br/>• Medição básica de visitas e pedidos de contacto<br/>• 3 vídeos profissionais/mês<br/>• Gestão completa de Google e Meta Ads<br/>• Google Meu Negócio otimizado<br/>• Social media pack: 12 posts feed + 8 stories</p>
+          </div>
           <a class="btn accent whatsapp-link plan-pro" href="https://wa.me/351934071660?text=Quero%20o%20Plano%20Pro" target="_blank">Quero este plano</a>
         </div>
         <div class="price-card">
-          <h3>Premium</h3>
-          <div class="price"><s>€1100</s> €950</div>
-          <p>• Tudo do Essencial + Pro<br/>• Landing page premium com CRO avançado<br/>• Dashboard em tempo real com métricas<br/>• 5–6 vídeos/mês + cortes extras para redes sociais<br/>• Gestão completa de redes sociais (feed + stories)<br/>• Consultoria estratégica mensal personalizada<br/>• Integração com CRM para gestão de leads<br/>• Campanhas multicanais com segmentação avançada</p>
+          <div>
+            <h3>Premium</h3>
+            <div class="price"><s>€1100</s> €950</div>
+            <p>• Tudo do Essencial + Pro<br/>• Landing page premium com CRO avançado<br/>• Dashboard em tempo real com métricas<br/>• 5–6 vídeos/mês + cortes extras para redes sociais<br/>• Gestão completa de redes sociais (feed + stories)<br/>• Consultoria estratégica mensal personalizada<br/>• Integração com CRM para gestão de leads<br/>• Campanhas multicanais com segmentação avançada</p>
+          </div>
           <a class="btn primary whatsapp-link plan-premium" href="https://wa.me/351934071660?text=Quero%20o%20Plano%20Premium" target="_blank">Quero este plano</a>
         </div>
       </div>
@@ -132,9 +139,9 @@
         <h2>Histórias de sucesso</h2>
         <div class="testimonials">
           <div class="testi-slides" id="testiSlides">
-            <div class="testi"><blockquote>“Nosso restaurante em Búzios passou a lotar todos os fins de semana.”</blockquote><cite>— Restaurante Mar Azul, Búzios</cite></div>
-            <div class="testi"><blockquote>“No Cabo Frio, os pedidos de delivery cresceram 120%.”</blockquote><cite>— Cantina Italiana, Cabo Frio</cite></div>
-            <div class="testi"><blockquote>“Transformaram nosso negócio em referência no bairro.”</blockquote><cite>— Churrasqueira do Bairro, Cacém</cite></div>
+            <div class="testi"><blockquote>“A Picanha do Gugu em Araruama viu suas mesas ficarem cheias no almoço de domingo após 2 meses de campanhas.”</blockquote><cite>— Picanha do Gugu, Araruama</cite></div>
+            <div class="testi"><blockquote>“O Silk Beach em Búzios conseguiu aumentar as reservas de turistas estrangeiros no verão sem aumentar o orçamento.”</blockquote><cite>— Silk Beach, Búzios</cite></div>
+            <div class="testi"><blockquote>“O Latina Grill em Cascais passou a receber mais clientes locais durante a semana com anúncios segmentados.”</blockquote><cite>— Latina Grill, Cascais</cite></div>
           </div>
         </div>
       </div>
@@ -160,16 +167,6 @@
   </div>
 
   <script>
-    // slide depoimentos (manual)
-    function moveSlide(id,dir){
-      const slider=document.getElementById(id);
-      const total=slider.children.length;
-      let index=Number(slider.getAttribute('data-index')||0);
-      index=(index+dir+total)%total;
-      slider.style.transform='translateX('+(-index*100)+'%)';
-      slider.setAttribute('data-index',index);
-    }
-
     // Form submission + dataLayer
     document.getElementById('lead-form').addEventListener('submit', function(e){
       e.preventDefault();
@@ -186,7 +183,7 @@
       });
 
       const subject=encodeURIComponent('Novo lead Restaurante');
-      const body=encodeURIComponent('Nome: '+name+'\\nEmail: '+email+'\\nTelefone: '+phone+'\\nMensagem: '+msg);
+      const body=encodeURIComponent('Nome: '+name+'\nEmail: '+email+'\nTelefone: '+phone+'\nMensagem: '+msg);
       window.location.href='mailto:vinicius.highlevelmkt@gmail.com?subject='+subject+'&body='+body;
 
       alert('Obrigado! Seus dados foram enviados.');
