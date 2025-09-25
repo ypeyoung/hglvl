@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.highlevelmkt.com/</loc>
     <lastmod>2025-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/"/>
   </url>
   <url>
-    <loc>https://www.highlevelmkt.com/br/</loc>
+    <loc>https://www.highlevelmkt.com/index.html</loc>
     <lastmod>2025-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/br/"/>
   </url>
-  <url>
-    <loc>https://www.highlevelmkt.com/cases/</loc>
-    <lastmod>2025-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.highlevelmkt.com/cases/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.highlevelmkt.com/cases/"/>
-  </url>
-  <url>
-    <loc>https://www.highlevelmkt.com/br/cases/</loc>
-    <lastmod>2025-09-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.highlevelmkt.com/br/br/cases/"/>
-  </url>
-
   <url>
     <loc>https://www.highlevelmkt.com/agenciamarketingcascais.html</loc>
     <lastmod>2025-09-14</lastmod>
@@ -35,9 +20,28 @@
     <loc>https://www.highlevelmkt.com/videosdedronecascais.html</loc>
     <lastmod>2025-09-14</lastmod>
   </url>
-
   <url>
     <loc>https://www.highlevelmkt.com/cases.html</loc>
+    <lastmod>2025-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/propostaimobiliaria.html</loc>
+    <lastmod>2025-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/restaurantes.html</loc>
+    <lastmod>2025-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/termos-e-condicoes.html</loc>
+    <lastmod>2025-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/obrigado.html</loc>
+    <lastmod>2025-09-14</lastmod>
+  </url>
+  <url>
+    <loc>https://www.highlevelmkt.com/404.html</loc>
     <lastmod>2025-09-14</lastmod>
   </url>
 </urlset>
