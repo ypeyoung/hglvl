@@ -13,24 +13,34 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1314640826871645');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1314640826871645&ev=PageView&noscript=1"/>
+  </noscript>
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
     :root{
-      --bg:#0f172a;
-      --bg-soft:#0b1226;
-      --card:#111827;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --primary:#5eead4;
-      --accent:#a78bfa;
-      --cta:#22d3ee;
-      --success:#34d399;
-      --shadow:0 10px 30px rgba(0,0,0,.45);
-      --radius:16px;
+      --bg:#0f172a;--bg-soft:#0b1226;--text:#e5e7eb;--muted:#9ca3af;
+      --primary:#5eead4;--accent:#a78bfa;--cta:#22d3ee;
+      --shadow:0 10px 30px rgba(0,0,0,.45);--radius:16px;
     }
-    body{background:linear-gradient(180deg,var(--bg),var(--bg-soft));color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    body{background:linear-gradient(180deg,var(--bg),var(--bg-soft));color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
     a{text-decoration:none;color:inherit}
-    .container{width:92%;max-width:1200px;margin:0 auto}
+    .container{width:92%;max-width:1200px;margin:auto}
     section{padding:88px 0}
     h1,h2,h3{line-height:1.15}
 
@@ -39,7 +49,9 @@
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800}
     .brand .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:var(--shadow)}
-    .nav a.btn{padding:10px 16px;background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018;border-radius:10px;font-weight:700}
+    .menu{display:flex;gap:20px;align-items:center}
+    .menu a{color:var(--text);font-weight:600;font-size:.95rem}
+    .menu a.btn{padding:10px 16px;background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018;border-radius:10px;font-weight:700}
 
     /* hero */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
@@ -54,7 +66,6 @@
     .input{background:#0b1327;border:1px solid rgba(148,163,184,.2);color:var(--text);padding:14px 12px;border-radius:12px}
     .note{font-size:.85rem;color:var(--muted)}
 
-    /* services grid */
     .grid{display:grid;gap:18px}
     .grid-4{grid-template-columns:repeat(4,1fr)}
     .card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:22px}
@@ -62,23 +73,27 @@
     .icon{font-size:24px;margin-bottom:8px}
     .muted{color:var(--muted)}
 
-    /* responsive */
+    .whyus{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     @media(max-width:1024px){.hero{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){section{padding:64px 0}.grid-4{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 
+  <!-- nav -->
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <div class="mark"></div>
-        <span>High Level Marketing</span>
+      <div class="brand"><div class="mark"></div><span>High Level Marketing</span></div>
+      <div class="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#porque">Porquê Nós</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="#contato" class="btn">Quero mais alunos</a>
       </div>
-      <a href="#contato" class="btn btn-primary">Quero mais alunos</a>
     </div>
   </nav>
 
+  <!-- hero -->
   <section class="container hero">
     <div>
       <h1>Enchemos a sua agenda com tráfego pago, conteúdos estratégicos e inteligência artificial</h1>
@@ -95,13 +110,14 @@
         <input class="input" type="tel" name="telefone" placeholder="Telemóvel" required />
         <input class="input" type="text" name="empresa" placeholder="Estúdio/Academia" />
         <input type="hidden" name="_subject" value="Lead — High Level Marketing" />
-        <input type="hidden" name="_redirect" value="#obrigado" />
+        <input type="hidden" name="_redirect" value="obrigado.html" />
         <button class="btn btn-primary" type="submit">Quero mais alunos</button>
         <span class="note">Respondemos em até 24h úteis</span>
       </form>
     </div>
   </section>
 
+  <!-- serviços -->
   <section id="servicos">
     <div class="container">
       <h2>Serviços para academias e estúdios</h2>
@@ -117,6 +133,20 @@
     </div>
   </section>
 
+  <!-- porquê nós -->
+  <section id="porque">
+    <div class="container">
+      <h2>Porquê escolher a High Level Marketing</h2>
+      <div class="whyus" style="margin-top:20px">
+        <div class="card"><h3>🎯 Foco no nicho</h3><p class="muted">Atuamos apenas com academias e estúdios — entendemos as suas dores e objetivos.</p></div>
+        <div class="card"><h3>📊 Transparência</h3><p class="muted">Relatórios claros com leads, custo por matrícula e ROI.</p></div>
+        <div class="card"><h3>⚡ Velocidade</h3><p class="muted">Campanhas ativas em até 7 dias após o diagnóstico.</p></div>
+        <div class="card"><h3>🤝 Suporte próximo</h3><p class="muted">Acompanhamento quinzenal e contacto direto com o gestor.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contato -->
   <section id="contato">
     <div class="container">
       <h2>Peça o seu plano de 90 dias</h2>
@@ -126,22 +156,35 @@
           <input class="input" type="text" name="nome" placeholder="Nome" required />
           <input class="input" type="email" name="email" placeholder="Email" required />
           <input class="input" type="tel" name="telefone" placeholder="Telemóvel" required />
-          <input class="input" type="text" name="cidade" placeholder="Cidade" />
           <textarea class="input" name="mensagem" rows="4" placeholder="Objetivos ou necessidades específicas"></textarea>
+          <input type="hidden" name="_redirect" value="obrigado.html" />
           <button class="btn btn-primary" type="submit">Receber proposta</button>
         </form>
       </div>
     </div>
   </section>
 
+  <!-- footer -->
   <footer>
     <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px">
-      <div class="brand">
-        <div class="mark"></div><span>High Level Marketing</span>
-      </div>
+      <div class="brand"><div class="mark"></div><span>High Level Marketing</span></div>
+      <p>Contacto: 
+        <a href="tel:+351934071660" class="contact-link">+351 934 071 660</a> | 
+        <a href="mailto:contato@highlevelmkt.com" class="contact-link">contato@highlevelmkt.com</a> | 
+        <a href="https://wa.me/351934071660" target="_blank" class="contact-link">WhatsApp</a>
+      </p>
       <span style="color:var(--muted)">© 2025 High Level Marketing — Todos os direitos reservados</span>
     </div>
   </footer>
 
+  <!-- Eventos extras -->
+  <script>
+    document.querySelectorAll("form.form").forEach(form=>{
+      form.addEventListener("submit",()=>{fbq('track','Lead')})
+    });
+    document.querySelectorAll("a.contact-link").forEach(link=>{
+      link.addEventListener("click",()=>{fbq('track','Contact')})
+    });
+  </script>
 </body>
 </html>
