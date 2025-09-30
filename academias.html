@@ -40,41 +40,59 @@
     }
     body{background:linear-gradient(180deg,var(--bg),var(--bg-soft));color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
     a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
     .container{width:92%;max-width:1200px;margin:auto}
     section{padding:88px 0}
     h1,h2,h3{line-height:1.15}
 
     /* nav */
-    .nav{position:sticky;top:0;background:rgba(15,23,42,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.12);z-index:50}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
-    .brand .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:var(--shadow)}
+    .nav{position:sticky;top:0;background:rgba(15,23,42,.8);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.12);z-index:1000}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{height:34px;width:auto}
     .menu{display:flex;gap:20px;align-items:center}
-    .menu a{color:var(--text);font-weight:600;font-size:.95rem}
-    .menu a.btn{padding:10px 16px;background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018;border-radius:10px;font-weight:700}
+    .menu a{color:var(--text);font-weight:600;font-size:.9rem}
+    .menu a.btn{padding:8px 14px;background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018;border-radius:8px;font-weight:700}
+
+    /* hamburger */
+    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+    .hamburger span{width:24px;height:3px;background:var(--text);border-radius:3px}
+
+    /* mobile menu */
+    .menu-mobile{display:none;flex-direction:column;gap:16px;padding:20px;background:#0f172a;position:absolute;top:56px;right:0;width:200px;border-left:1px solid rgba(255,255,255,0.1)}
+    .menu-mobile a{color:var(--text);font-weight:600}
 
     /* hero */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
-    .hero h1{font-size:clamp(28px,4.2vw,54px);font-weight:900}
+    .hero h1{font-size:clamp(24px,4vw,48px);font-weight:900}
     .hero p{color:var(--muted);max-width:56ch;margin-top:14px}
-    .btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:800;transition:.15s}
+    .btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700;transition:.15s}
     .btn-primary{background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018}
     .btn-secondary{border:1px solid rgba(148,163,184,.25);color:var(--text)}
     .btn:hover{transform:translateY(-2px)}
     .hero-card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.15);border-radius:var(--radius);padding:18px}
     .form{display:grid;gap:12px}
-    .input{background:#0b1327;border:1px solid rgba(148,163,184,.2);color:var(--text);padding:14px 12px;border-radius:12px}
+    .input{background:#0b1327;border:1px solid rgba(148,163,184,.2);color:var(--text);padding:12px;border-radius:10px}
     .note{font-size:.85rem;color:var(--muted)}
 
     .grid{display:grid;gap:18px}
     .grid-4{grid-template-columns:repeat(4,1fr)}
-    .card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:22px}
+    .card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:20px}
     .card h3{margin-bottom:6px}
-    .icon{font-size:24px;margin-bottom:8px}
+    .icon{font-size:22px;margin-bottom:8px}
     .muted{color:var(--muted)}
 
     .whyus{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+
+    /* whatsapp button */
+    .whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:2000;transition:.2s}
+    .whatsapp-btn:hover{transform:scale(1.05)}
+
     @media(max-width:1024px){.hero{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){
+      .menu{display:none}
+      .hamburger{display:flex}
+    }
     @media(max-width:640px){section{padding:64px 0}.grid-4{grid-template-columns:1fr}}
   </style>
 </head>
@@ -83,13 +101,25 @@
   <!-- nav -->
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand"><div class="mark"></div><span>High Level Marketing</span></div>
+      <div class="brand">
+        <img src="logosite.png" alt="High Level Marketing">
+        <span>High Level Marketing</span>
+      </div>
       <div class="menu">
         <a href="#servicos">Serviços</a>
         <a href="#porque">Porquê Nós</a>
         <a href="portfolio.html">Portfólio</a>
         <a href="#contato" class="btn">Quero mais alunos</a>
       </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="menu-mobile" id="menuMobile">
+      <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+      <a href="#porque" onclick="toggleMenu()">Porquê Nós</a>
+      <a href="portfolio.html" onclick="toggleMenu()">Portfólio</a>
+      <a href="#contato" onclick="toggleMenu()">Quero mais alunos</a>
     </div>
   </nav>
 
@@ -167,7 +197,10 @@
   <!-- footer -->
   <footer>
     <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px">
-      <div class="brand"><div class="mark"></div><span>High Level Marketing</span></div>
+      <div class="brand">
+        <img src="logosite.png" alt="High Level Marketing" style="height:34px;width:auto">
+        <span>High Level Marketing</span>
+      </div>
       <p>Contacto: 
         <a href="tel:+351934071660" class="contact-link">+351 934 071 660</a> | 
         <a href="mailto:contato@highlevelmkt.com" class="contact-link">contato@highlevelmkt.com</a> | 
@@ -177,8 +210,17 @@
     </div>
   </footer>
 
-  <!-- Eventos extras -->
+  <!-- Botão WhatsApp fixo -->
+  <a href="https://wa.me/351934071660" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+    ☎
+  </a>
+
+  <!-- Scripts -->
   <script>
+    function toggleMenu(){
+      const menu = document.getElementById("menuMobile");
+      menu.style.display = (menu.style.display==="flex"?"none":"flex");
+    }
     document.querySelectorAll("form.form").forEach(form=>{
       form.addEventListener("submit",()=>{fbq('track','Lead')})
     });
