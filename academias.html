@@ -16,20 +16,13 @@
   <!-- Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "MarketingAgency",
-    "name": "High Level Marketing",
-    "url": "https://www.highlevelmkt.com",
-    "logo": "https://www.highlevelmkt.com/logosite.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lisboa",
-      "addressCountry": "Portugal"
-    },
-    "sameAs": [
-      "https://www.facebook.com/highlevelmkt",
-      "https://www.instagram.com/highlevelmkt"
-    ]
+    "@context":"https://schema.org",
+    "@type":"MarketingAgency",
+    "name":"High Level Marketing",
+    "url":"https://www.highlevelmkt.com",
+    "logo":"https://www.highlevelmkt.com/logosite.png",
+    "address":{"@type":"PostalAddress","addressLocality":"Lisboa","addressCountry":"Portugal"},
+    "sameAs":["https://www.facebook.com/highlevelmkt","https://www.instagram.com/highlevelmkt"]
   }
   </script>
 
@@ -42,17 +35,15 @@
 
   <!-- Meta Pixel -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1314640826871645');
-  fbq('track', 'PageView');
+  fbq('init','1314640826871645');
+  fbq('track','PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1314640826871645&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
@@ -80,7 +71,7 @@
     .menu a.btn{padding:8px 14px;background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018;border-radius:8px;font-weight:700}
     .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
     .hamburger span{width:24px;height:3px;background:var(--text);border-radius:3px}
-    .menu-mobile{display:none;flex-direction:column;gap:16px;padding:20px;background:#0f172a;position:absolute;top:56px;right:0;width:200px;border-left:1px solid rgba(255,255,255,0.1)}
+    .menu-mobile{display:none;flex-direction:column;gap:16px;padding:20px;background:#0f172a;position:absolute;top:56px;right:0;width:220px;border-left:1px solid rgba(255,255,255,0.1)}
     .menu-mobile a{color:var(--text);font-weight:600}
 
     /* hero */
@@ -96,6 +87,7 @@
     .input{background:#0b1327;border:1px solid rgba(148,163,184,.2);color:var(--text);padding:12px;border-radius:10px}
     .note{font-size:.85rem;color:var(--muted)}
 
+    /* grids/cards */
     .grid{display:grid;gap:18px}
     .grid-4{grid-template-columns:repeat(4,1fr)}
     .card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:20px}
@@ -103,17 +95,21 @@
     .icon{font-size:22px;margin-bottom:8px}
     .muted{color:var(--muted)}
 
-    .testimonials,.cases,.faq,.selos{margin-top:40px}
+    /* extra sections */
+    .whyus{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     .testimonial{background:rgba(17,24,39,.7);padding:20px;border-radius:12px}
     .testimonial p{font-style:italic}
     .faq-item{margin-bottom:15px}
-    .faq-item h3{cursor:pointer}
 
-    .whyus{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    /* footer + map */
+    footer .footer-wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+    .map{width:100%;max-width:560px;height:220px;border:0;border-radius:10px;filter:grayscale(20%) brightness(95%);}
 
+    /* whatsapp button */
     .whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:2000;transition:.2s}
     .whatsapp-btn:hover{transform:scale(1.05)}
 
+    /* responsive */
     @media(max-width:1024px){.hero{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.menu{display:none}.hamburger{display:flex}}
     @media(max-width:640px){section{padding:64px 0}.grid-4{grid-template-columns:1fr}}
@@ -150,7 +146,7 @@
   <section class="container hero fade-in">
     <div>
       <h1>Enchemos a sua agenda com tráfego pago, conteúdos estratégicos e inteligência artificial</h1>
-      <p>Na High Level Marketing trabalhamos exclusivamente com academias e estúdios em Portugal. Aplicamos anúncios certeiros, copy que converte, gestão de redes sociais, SEO local e Google Meu Negócio. Tudo medido com pixels e otimizado com IA para gerar resultados consistentes.</p>
+      <p>Trabalhamos exclusivamente com academias e estúdios em Portugal. Anúncios certeiros, copy que converte, social media, SEO local e Google Meu Negócio. Tudo medido com pixels e otimizado com IA para resultados consistentes.</p>
       <div style="margin-top:20px">
         <a href="#contato" class="btn btn-primary">Receber plano gratuito</a>
         <a href="#servicos" class="btn btn-secondary">Ver serviços</a>
@@ -162,8 +158,10 @@
         <input class="input" type="email" name="email" placeholder="Email" required />
         <input class="input" type="tel" name="telefone" placeholder="Telemóvel" required />
         <input class="input" type="text" name="empresa" placeholder="Estúdio/Academia" />
+        <input type="hidden" name="_subject" value="Lead — High Level Marketing" />
         <input type="hidden" name="_redirect" value="obrigado.html" />
         <button class="btn btn-primary" type="submit">Quero mais alunos</button>
+        <span class="note">Respondemos em até 24h úteis</span>
       </form>
     </div>
   </section>
@@ -175,8 +173,12 @@
       <div class="grid grid-4" style="margin-top:20px">
         <div class="card"><div class="icon">💸</div><h3>Tráfego Pago</h3><p class="muted">Meta Ads e Google Ads com foco em matrículas.</p></div>
         <div class="card"><div class="icon">✍️</div><h3>Copywriting</h3><p class="muted">Mensagens claras que eliminam objeções.</p></div>
-        <div class="card"><div class="icon">📱</div><h3>Social Media</h3><p class="muted">Gestão de conteúdos que criam autoridade.</p></div>
-        <div class="card"><div class="icon">🔎</div><h3>SEO Local</h3><p class="muted">Posicionamento no mapa e motores de busca.</p></div>
+        <div class="card"><div class="icon">📱</div><h3>Social Media</h3><p class="muted">Conteúdo que gera autoridade e confiança.</p></div>
+        <div class="card"><div class="icon">🔎</div><h3>SEO & Google Meu Negócio</h3><p class="muted">Posicionamento no mapa e motores de busca.</p></div>
+        <div class="card"><div class="icon">🖥️</div><h3>Criação de Sites</h3><p class="muted">Landings rápidas e otimizadas para conversão.</p></div>
+        <div class="card"><div class="icon">🎥</div><h3>Conteúdos</h3><p class="muted">Vídeos e imagens profissionais para anúncios.</p></div>
+        <div class="card"><div class="icon">🤖</div><h3>Pixels & IA</h3><p class="muted">Eventos, CAPI e automações inteligentes.</p></div>
+        <div class="card"><div class="icon">📈</div><h3>Relatórios</h3><p class="muted">KPIs de leads, CPL, taxa de matrícula e ROI.</p></div>
       </div>
     </div>
   </section>
@@ -198,34 +200,34 @@
   <section id="testemunhos" class="fade-in">
     <div class="container">
       <h2>O que dizem os nossos clientes</h2>
-      <div class="grid grid-4 testimonials">
+      <div class="grid grid-4" style="margin-top:20px">
         <div class="testimonial">
           <p>"A Marretão Fitness lotou as turmas em 2 meses. O tráfego trouxe mais de 180 novos alunos."</p>
-          <strong>Marretão Fitness — RJ</strong>
+          <strong>Marretão Fitness — RJ (Brasil)</strong>
         </div>
         <div class="testimonial">
           <p>"Com a High Level, a SmartFit Búzios reduziu o custo por matrícula em 65%."</p>
-          <strong>SmartFit Búzios — RJ</strong>
+          <strong>SmartFit Búzios — RJ (Brasil)</strong>
         </div>
         <div class="testimonial">
-          <p>"Em Cascais, nossas aulas de pilates passaram de 40% para 95% de ocupação."</p>
-          <strong>Pilates Studio Cascais</strong>
+          <p>"Em Cascais, as aulas de pilates passaram de 40% para 95% de ocupação."</p>
+          <strong>Pilates Studio Cascais — PT</strong>
         </div>
         <div class="testimonial">
           <p>"Conseguimos ROI 6x em campanhas locais. Simplesmente incrível."</p>
-          <strong>Funcional Lisboa</strong>
+          <strong>Funcional Lisboa — PT</strong>
         </div>
       </div>
     </div>
   </section>
 
   <!-- cases -->
-  <section class="cases fade-in">
+  <section class="fade-in">
     <div class="container">
       <h2>Resultados Reais</h2>
-      <div class="grid grid-4">
+      <div class="grid grid-4" style="margin-top:20px">
         <div class="card"><h3>+120</h3><p class="muted">Matrículas em 3 meses</p></div>
-        <div class="card"><h3>-65%</h3><p class="muted">Redução no custo por lead</p></div>
+        <div class="card"><h3>-65%</h3><p class="muted">Redução no CPL</p></div>
         <div class="card"><h3>ROI 6x</h3><p class="muted">Retorno sobre investimento</p></div>
         <div class="card"><h3>95%</h3><p class="muted">Taxa de ocupação das aulas</p></div>
       </div>
@@ -236,12 +238,12 @@
   </section>
 
   <!-- faq -->
-  <section class="faq fade-in">
+  <section class="fade-in">
     <div class="container">
       <h2>Perguntas Frequentes</h2>
-      <div class="faq-item"><h3>📅 Em quanto tempo vejo resultados?</h3><p class="muted">Em média, em até 30 dias já há aumento visível nas matrículas.</p></div>
-      <div class="faq-item"><h3>🤔 Vocês cuidam de tudo?</h3><p class="muted">Sim, anúncios, redes, copy, site, SEO e pixels.</p></div>
-      <div class="faq-item"><h3>📄 Existe fidelização?</h3><p class="muted">Não. Trabalhamos com contratos flexíveis e resultados.</p></div>
+      <div class="faq-item"><h3>📅 Em quanto tempo vejo resultados?</h3><p class="muted">Em média, até 30 dias já há aumento visível nas matrículas.</p></div>
+      <div class="faq-item"><h3>🤔 Vocês cuidam de tudo?</h3><p class="muted">Sim: anúncios, redes, copy, site, SEO e pixels.</p></div>
+      <div class="faq-item"><h3>📄 Existe fidelização?</h3><p class="muted">Não. Trabalhamos com contratos flexíveis e foco em performance.</p></div>
     </div>
   </section>
 
@@ -256,6 +258,7 @@
           <input class="input" type="email" name="email" placeholder="Email" required />
           <input class="input" type="tel" name="telefone" placeholder="Telemóvel" required />
           <textarea class="input" name="mensagem" rows="4" placeholder="Objetivos ou necessidades específicas"></textarea>
+          <input type="hidden" name="_subject" value="Lead — High Level Marketing" />
           <input type="hidden" name="_redirect" value="obrigado.html" />
           <button class="btn btn-primary" type="submit">Receber proposta</button>
         </form>
@@ -265,4 +268,47 @@
 
   <!-- footer -->
   <footer>
-    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space
+    <div class="container footer-wrap" style="padding:26px 0">
+      <div class="brand">
+        <img src="logosite.png" alt="High Level Marketing" style="height:34px;width:auto">
+        <span>High Level Marketing</span>
+      </div>
+      <p>Contacto: 
+        <a href="tel:+351934071660" class="contact-link">+351 934 071 660</a> • 
+        <a href="mailto:contato@highlevelmkt.com" class="contact-link">contato@highlevelmkt.com</a> • 
+        <a href="https://wa.me/351934071660" target="_blank" class="contact-link">WhatsApp</a>
+      </p>
+      <span style="color:var(--muted)">© 2025 High Level Marketing — Todos os direitos reservados</span>
+    </div>
+
+    <div class="container" style="padding-bottom:36px">
+      <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Cascais,Portugal&output=embed">
+      </iframe>
+    </div>
+  </footer>
+
+  <!-- Botão WhatsApp fixo -->
+  <a href="https://wa.me/351934071660" target="_blank" class="whatsapp-btn" aria-label="WhatsApp">☎</a>
+
+  <!-- Scripts -->
+  <script>
+    // menu mobile
+    function toggleMenu(){const m=document.getElementById('menuMobile');m.style.display=(m.style.display==='flex'?'none':'flex');}
+
+    // eventos Meta Pixel
+    document.querySelectorAll('form.form').forEach(f=>{
+      f.addEventListener('submit',()=>{try{fbq('track','Lead')}catch(e){}});
+    });
+    document.querySelectorAll('a.contact-link,.whatsapp-btn').forEach(a=>{
+      a.addEventListener('click',()=>{try{fbq('track','Contact')}catch(e){}});
+    });
+
+    // animações on scroll
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0.12});
+    document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
