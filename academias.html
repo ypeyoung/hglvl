@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>High Level Marketing — Academias & Estúdios</title>
+  <meta name="description" content="Agência especializada em academias e estúdios de pilates/treino funcional em Portugal. Tráfego pago, copywriting, social media, conteúdos, sites, SEO, Google Meu Negócio, pixels e IA." />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#0f172a;
+      --bg-soft:#0b1226;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --primary:#5eead4;
+      --accent:#a78bfa;
+      --cta:#22d3ee;
+      --success:#34d399;
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+      --radius:16px;
+    }
+    body{background:linear-gradient(180deg,var(--bg),var(--bg-soft));color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:92%;max-width:1200px;margin:0 auto}
+    section{padding:88px 0}
+    h1,h2,h3{line-height:1.15}
+
+    /* nav */
+    .nav{position:sticky;top:0;background:rgba(15,23,42,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.12);z-index:50}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:var(--shadow)}
+    .nav a.btn{padding:10px 16px;background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018;border-radius:10px;font-weight:700}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+    .hero h1{font-size:clamp(28px,4.2vw,54px);font-weight:900}
+    .hero p{color:var(--muted);max-width:56ch;margin-top:14px}
+    .btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:800;transition:.15s}
+    .btn-primary{background:linear-gradient(135deg,var(--cta),var(--primary));color:#001018}
+    .btn-secondary{border:1px solid rgba(148,163,184,.25);color:var(--text)}
+    .btn:hover{transform:translateY(-2px)}
+    .hero-card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.15);border-radius:var(--radius);padding:18px}
+    .form{display:grid;gap:12px}
+    .input{background:#0b1327;border:1px solid rgba(148,163,184,.2);color:var(--text);padding:14px 12px;border-radius:12px}
+    .note{font-size:.85rem;color:var(--muted)}
+
+    /* services grid */
+    .grid{display:grid;gap:18px}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:22px}
+    .card h3{margin-bottom:6px}
+    .icon{font-size:24px;margin-bottom:8px}
+    .muted{color:var(--muted)}
+
+    /* responsive */
+    @media(max-width:1024px){.hero{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){section{padding:64px 0}.grid-4{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="mark"></div>
+        <span>High Level Marketing</span>
+      </div>
+      <a href="#contato" class="btn btn-primary">Quero mais alunos</a>
+    </div>
+  </nav>
+
+  <section class="container hero">
+    <div>
+      <h1>Enchemos a sua agenda com tráfego pago, conteúdos estratégicos e inteligência artificial</h1>
+      <p>Na High Level Marketing trabalhamos exclusivamente com academias e estúdios em Portugal. Aplicamos anúncios certeiros, copy que converte, gestão de redes sociais, SEO local e Google Meu Negócio. Tudo medido com pixels e otimizado com IA para gerar resultados consistentes.</p>
+      <div style="margin-top:20px">
+        <a href="#contato" class="btn btn-primary">Receber plano gratuito</a>
+        <a href="#servicos" class="btn btn-secondary">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <form class="form" action="https://formspree.io/f/mldpbwkw" method="POST">
+        <input class="input" type="text" name="nome" placeholder="Nome" required />
+        <input class="input" type="email" name="email" placeholder="Email" required />
+        <input class="input" type="tel" name="telefone" placeholder="Telemóvel" required />
+        <input class="input" type="text" name="empresa" placeholder="Estúdio/Academia" />
+        <input type="hidden" name="_subject" value="Lead — High Level Marketing" />
+        <input type="hidden" name="_redirect" value="#obrigado" />
+        <button class="btn btn-primary" type="submit">Quero mais alunos</button>
+        <span class="note">Respondemos em até 24h úteis</span>
+      </form>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <h2>Serviços para academias e estúdios</h2>
+      <div class="grid grid-4" style="margin-top:20px">
+        <div class="card"><div class="icon">💸</div><h3>Tráfego Pago</h3><p class="muted">Campanhas em Meta Ads e Google Ads com foco em matrículas.</p></div>
+        <div class="card"><div class="icon">✍️</div><h3>Copywriting</h3><p class="muted">Mensagens claras que eliminam objeções e geram ação.</p></div>
+        <div class="card"><div class="icon">📱</div><h3>Social Media</h3><p class="muted">Gestão de conteúdos que criam autoridade e confiança.</p></div>
+        <div class="card"><div class="icon">🔎</div><h3>SEO & Google Meu Negócio</h3><p class="muted">Posicionamento no mapa e nos motores de pesquisa.</p></div>
+        <div class="card"><div class="icon">🖥️</div><h3>Criação de Sites</h3><p class="muted">Landing pages rápidas e otimizadas para conversão.</p></div>
+        <div class="card"><div class="icon">🎥</div><h3>Conteúdos</h3><p class="muted">Vídeos e imagens profissionais para anúncios e redes.</p></div>
+        <div class="card"><div class="icon">🤖</div><h3>Pixels & IA</h3><p class="muted">Automação de leads e análise inteligente de resultados.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2>Peça o seu plano de 90 dias</h2>
+      <p class="muted">Deixe os seus dados e receba uma proposta clara, adaptada ao seu negócio.</p>
+      <div class="hero-card" style="margin-top:20px">
+        <form class="form" action="https://formspree.io/f/mldpbwkw" method="POST">
+          <input class="input" type="text" name="nome" placeholder="Nome" required />
+          <input class="input" type="email" name="email" placeholder="Email" required />
+          <input class="input" type="tel" name="telefone" placeholder="Telemóvel" required />
+          <input class="input" type="text" name="cidade" placeholder="Cidade" />
+          <textarea class="input" name="mensagem" rows="4" placeholder="Objetivos ou necessidades específicas"></textarea>
+          <button class="btn btn-primary" type="submit">Receber proposta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px">
+      <div class="brand">
+        <div class="mark"></div><span>High Level Marketing</span>
+      </div>
+      <span style="color:var(--muted)">© 2025 High Level Marketing — Todos os direitos reservados</span>
+    </div>
+  </footer>
+
+</body>
+</html>
