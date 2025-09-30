@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -27,8 +27,10 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '4331967567089383');
+  fbq('init', '4331967567089383'); // substitui pelo pixel certo
   fbq('track', 'PageView');
+  fbq('track', 'Lead', {content_name:'Obrigado'});
+  fbq('track', 'PropostaEnviada');
   </script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4331967567089383&ev=PageView&noscript=1"/></noscript>
 
@@ -40,25 +42,31 @@
   })(window,document,'script','dataLayer','GTM-P3BJ6WMZ');</script>
 
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#0f1222;margin:0}
-    .wrap{max-width:720px;margin:60px auto;padding:0 16px}
-    a{color:#6b4cff;text-decoration:none}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#0f1222;margin:0;background:#f9fafb}
+    .wrap{max-width:720px;margin:60px auto;padding:0 16px;text-align:center}
+    h1{font-size:2rem;color:#111827;margin-bottom:1rem}
+    p{margin:0.5rem 0}
+    a{color:#6b4cff;text-decoration:none;font-weight:600}
+    a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3BJ6WMZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main class="wrap">
-    <h1>obrigado</h1>
-    <p>recebemos seus dados. em breve entraremos em contato.</p>
-    <p><a href="/">voltar para a página inicial</a></p>
+    <h1>obrigado!</h1>
+    <p>recebemos os seus dados. em breve entraremos em contacto.</p>
+    <p><a href="/">voltar à página inicial</a></p>
   </main>
 
   <script>
     // Google via GTM
-    try{ window.dataLayer && window.dataLayer.push({event:'generate_lead', lead_method:'thankyou_page'}); }catch(e){}
-    // Meta
-    try{ if (window.fbq) fbq('track','Lead',{content_name:'Obrigado'}) }catch(e){}
+    try{
+      window.dataLayer && window.dataLayer.push({
+        event:'generate_lead',
+        lead_method:'thankyou_page'
+      });
+    }catch(e){}
   </script>
 </body>
 </html>
