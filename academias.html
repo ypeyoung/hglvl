@@ -91,15 +91,16 @@
     .grid-4{grid-template-columns:repeat(4,1fr)}
     .card{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:20px;transition:.3s}
     .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .card h3{margin-bottom:6px}
-    .icon{font-size:22px;margin-bottom:8px}
     .muted{color:var(--muted)}
 
-    /* extra sections */
-    .whyus{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .testimonial{background:rgba(17,24,39,.7);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
-    .testimonial p{font-style:italic}
-    .faq-box,.cases-box{background:rgba(17,24,39,.65);padding:30px;border-radius:16px;box-shadow:var(--shadow)}
+    /* faq */
+    .faq-box{background:rgba(17,24,39,.65);padding:30px;border-radius:16px;box-shadow:var(--shadow)}
+    .faq-item{border-bottom:1px solid rgba(148,163,184,.2);padding:14px 0;cursor:pointer}
+    .faq-item h3{font-size:1rem;display:flex;justify-content:space-between;align-items:center}
+    .faq-item span{transition:.3s}
+    .faq-item p{max-height:0;overflow:hidden;transition:max-height .4s ease;margin-top:6px;color:var(--muted)}
+    .faq-item.active p{max-height:200px}
+    .faq-item.active span{transform:rotate(45deg)}
 
     /* footer */
     footer .footer-wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
@@ -108,7 +109,6 @@
     .whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:2000;transition:.2s}
     .whatsapp-btn:hover{transform:scale(1.05)}
 
-    /* responsive */
     @media(max-width:1024px){.hero{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.menu{display:none}.hamburger{display:flex}}
     @media(max-width:640px){section{padding:64px 0}.grid-4{grid-template-columns:1fr}}
@@ -126,7 +126,6 @@
       <div class="menu">
         <a href="#servicos">Serviços</a>
         <a href="#porque">Porquê Nós</a>
-        <a href="#testemunhos">Clientes</a>
         <a href="portfolio.html">Portfólio</a>
         <a href="#contato" class="btn">Quero mais alunos</a>
       </div>
@@ -135,7 +134,6 @@
     <div class="menu-mobile" id="menuMobile">
       <a href="#servicos" onclick="toggleMenu()">Serviços</a>
       <a href="#porque" onclick="toggleMenu()">Porquê Nós</a>
-      <a href="#testemunhos" onclick="toggleMenu()">Clientes</a>
       <a href="portfolio.html" onclick="toggleMenu()">Portfólio</a>
       <a href="#contato" onclick="toggleMenu()">Quero mais alunos</a>
     </div>
@@ -168,10 +166,10 @@
     <div class="container">
       <h2>Serviços</h2>
       <div class="grid grid-4" style="margin-top:20px">
-        <div class="card"><div class="icon">💸</div><h3>Tráfego Pago</h3><p class="muted">Meta Ads e Google Ads com foco em matrículas.</p></div>
-        <div class="card"><div class="icon">✍️</div><h3>Copywriting</h3><p class="muted">Mensagens que eliminam objeções.</p></div>
-        <div class="card"><div class="icon">📱</div><h3>Social Media</h3><p class="muted">Conteúdo que gera autoridade.</p></div>
-        <div class="card"><div class="icon">🔎</div><h3>SEO & Google Meu Negócio</h3><p class="muted">Posicionamento no mapa e pesquisa.</p></div>
+        <div class="card"><h3>💸 Tráfego Pago</h3><p class="muted">Meta Ads e Google Ads com foco em matrículas.</p></div>
+        <div class="card"><h3>✍️ Copywriting</h3><p class="muted">Mensagens que eliminam objeções.</p></div>
+        <div class="card"><h3>📱 Social Media</h3><p class="muted">Conteúdo que gera autoridade.</p></div>
+        <div class="card"><h3>🔎 SEO & Google Meu Negócio</h3><p class="muted">Posicionamento no mapa e pesquisa.</p></div>
       </div>
     </div>
   </section>
@@ -189,31 +187,6 @@
     </div>
   </section>
 
-  <!-- testemunhos -->
-  <section id="testemunhos" class="fade-in">
-    <div class="container">
-      <h2>O que dizem os nossos clientes</h2>
-      <div class="grid grid-4" style="margin-top:20px">
-        <div class="testimonial">
-          <p>"A Marretão Fitness lotou as turmas em 2 meses. O tráfego trouxe mais de 180 novos alunos."</p>
-          <strong>Marretão Fitness — RJ (Brasil)</strong>
-        </div>
-        <div class="testimonial">
-          <p>"Com a High Level, a SmartFit Búzios reduziu o custo por matrícula em 65%."</p>
-          <strong>SmartFit Búzios — RJ (Brasil)</strong>
-        </div>
-        <div class="testimonial">
-          <p>"Em Cascais, as aulas de pilates passaram de 40% para 95% de ocupação."</p>
-          <strong>Pilates Studio Cascais — PT</strong>
-        </div>
-        <div class="testimonial">
-          <p>"Conseguimos ROI 6x em campanhas locais. Simplesmente incrível."</p>
-          <strong>Funcional Lisboa — PT</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- cases -->
   <section class="fade-in">
     <div class="container cases-box">
@@ -224,9 +197,6 @@
         <div class="card"><h3>ROI 6x</h3><p class="muted">Retorno sobre investimento</p></div>
         <div class="card"><h3>95%</h3><p class="muted">Taxa de ocupação das aulas</p></div>
       </div>
-      <div style="text-align:center;margin-top:20px">
-        <a href="#contato" class="btn btn-primary">Quero esses resultados</a>
-      </div>
     </div>
   </section>
 
@@ -234,9 +204,9 @@
   <section class="fade-in">
     <div class="container faq-box">
       <h2>Perguntas Frequentes</h2>
-      <div class="faq-item"><h3>📅 Em quanto tempo vejo resultados?</h3><p class="muted">Em média, até 30 dias já há aumento visível nas matrículas.</p></div>
-      <div class="faq-item"><h3>🤔 Vocês cuidam de tudo?</h3><p class="muted">Sim: anúncios, redes, copy, site, SEO e pixels.</p></div>
-      <div class="faq-item"><h3>📄 Existe fidelização?</h3><p class="muted">Não. Trabalhamos com contratos flexíveis e foco em performance.</p></div>
+      <div class="faq-item"><h3>📅 Em quanto tempo vejo resultados? <span>+</span></h3><p>Em média, até 30 dias já há aumento visível nas matrículas.</p></div>
+      <div class="faq-item"><h3>🤔 Vocês cuidam de tudo? <span>+</span></h3><p>Sim: anúncios, redes, copy, site, SEO e pixels.</p></div>
+      <div class="faq-item"><h3>📄 Existe fidelização? <span>+</span></h3><p>Não. Trabalhamos com contratos flexíveis e foco em performance.</p></div>
     </div>
   </section>
 
@@ -279,10 +249,12 @@
 
   <!-- Scripts -->
   <script>
-    // menu mobile
-    function toggleMenu(){const m=document.getElementById('menuMobile');m.style.display=(m.style.display==='flex'?'none':'flex');}
+    function toggleMenu(){
+      const m=document.getElementById('menuMobile');
+      m.style.display=(m.style.display==='flex'?'none':'flex');
+    }
 
-    // eventos Meta Pixel
+    // pixel eventos
     document.querySelectorAll('form.form').forEach(f=>{
       f.addEventListener('submit',()=>{try{fbq('track','Lead')}catch(e){}});
     });
@@ -295,6 +267,13 @@
       entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
     },{threshold:0.12});
     document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+    // faq acordeão
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      item.addEventListener('click',()=>{
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
